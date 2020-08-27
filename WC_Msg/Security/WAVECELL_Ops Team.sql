@@ -1,0 +1,2 @@
+﻿CREATE USER [WAVECELL\Ops Team] FOR LOGIN [WAVECELL\Ops Team];
+

@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [user_FIN]
+    WITH PASSWORD = N't|ip|daqKmjwxuknZh9~Lai<msFT7_&#$!~<yssjqiypnl:k', SID = 0xC4E56C7F20B1A84B91EAAB26E5000DCF, DEFAULT_DATABASE = [MessageSphere], DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

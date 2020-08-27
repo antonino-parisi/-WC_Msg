@@ -1,0 +1,4 @@
+﻿CREATE CERTIFICATE [AccountCertificate]
+    AUTHORIZATION [dbo]
+    WITH SUBJECT = N'Account SSO Certificate', START_DATE = N'2020-06-16T02:10:47', EXPIRY_DATE = N'2021-06-16T02:10:47';
+

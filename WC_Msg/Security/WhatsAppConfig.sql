@@ -1,0 +1,4 @@
+﻿CREATE CERTIFICATE [WhatsAppConfig]
+    AUTHORIZATION [dbo]
+    WITH SUBJECT = N'WhatsApp configuration', START_DATE = N'2019-09-13T10:46:25', EXPIRY_DATE = N'2020-09-13T10:46:25';
+

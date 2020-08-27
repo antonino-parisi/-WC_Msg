@@ -1,0 +1,2 @@
+﻿CREATE USER [WAVECELL\Product Team] FOR LOGIN [WAVECELL\Product Team];
+

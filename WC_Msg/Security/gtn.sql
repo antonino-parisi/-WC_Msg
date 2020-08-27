@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [gtn]
+    AUTHORIZATION [dbo];
+

@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [app_map]
+    WITH PASSWORD = N'bAtnPs|GTxfCd}5%eqVUlg2qmsFT7_&#$!~<j0uttzaapKc3', SID = 0xBB71D1B688416D49BE6C9690EE9893C6, DEFAULT_DATABASE = [MessageSphere], DEFAULT_LANGUAGE = [us_english];
+

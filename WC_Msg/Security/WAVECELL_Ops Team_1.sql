@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [WAVECELL\Ops Team]
+    FROM WINDOWS WITH DEFAULT_DATABASE = [MessageSphere], DEFAULT_LANGUAGE = [us_english];
+

@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [user_MM]
+    WITH PASSWORD = N't|i:up|9daqmjwxuk;na5QismsFT7_&#$!~<sj1qy6pnlkfa', SID = 0x466CD9995E43924282A6C8C47EE5422B, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

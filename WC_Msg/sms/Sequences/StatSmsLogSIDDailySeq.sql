@@ -1,0 +1,7 @@
+﻿CREATE SEQUENCE [sms].[StatSmsLogSIDDailySeq]
+    AS INT
+    START WITH 1
+    INCREMENT BY 1
+    CYCLE
+    NO CACHE;
+

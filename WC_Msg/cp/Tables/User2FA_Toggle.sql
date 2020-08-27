@@ -1,0 +1,5 @@
+﻿CREATE TABLE [cp].[User2FA_Toggle] (
+    [UserId] UNIQUEIDENTIFIER NOT NULL,
+    PRIMARY KEY CLUSTERED ([UserId] ASC)
+);
+

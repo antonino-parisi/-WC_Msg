@@ -1,0 +1,4 @@
+﻿CREATE CERTIFICATE [ChatAppsConfig]
+    AUTHORIZATION [dbo]
+    WITH SUBJECT = N'ChatApps configuration', START_DATE = N'2020-02-01T00:00:00', EXPIRY_DATE = N'2070-02-01T00:00:00';
+

@@ -1,0 +1,1577 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>WC_Msg</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{9410700e-6ba2-413f-9370-f3df303f6222}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>WC_Msg</RootNamespace>
+    <AssemblyName>WC_Msg</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="rt\" />
+    <Folder Include="rt\Tables\" />
+    <Folder Include="ms\" />
+    <Folder Include="ms\Tables\" />
+    <Folder Include="cp\" />
+    <Folder Include="cp\Tables\" />
+    <Folder Include="sms\" />
+    <Folder Include="sms\Tables\" />
+    <Folder Include="map\" />
+    <Folder Include="map\Tables\" />
+    <Folder Include="ext\" />
+    <Folder Include="ext\Tables\" />
+    <Folder Include="optimus\" />
+    <Folder Include="optimus\Tables\" />
+    <Folder Include="mno\" />
+    <Folder Include="mno\Tables\" />
+    <Folder Include="morph\" />
+    <Folder Include="morph\Tables\" />
+    <Folder Include="ipm\" />
+    <Folder Include="ipm\Tables\" />
+    <Folder Include="costprov\" />
+    <Folder Include="costprov\Tables\" />
+    <Folder Include="gtn\" />
+    <Folder Include="gtn\Tables\" />
+    <Folder Include="cls\" />
+    <Folder Include="cls\Tables\" />
+    <Folder Include="rt\Views\" />
+    <Folder Include="rpt\" />
+    <Folder Include="rpt\Views\" />
+    <Folder Include="ms\Views\" />
+    <Folder Include="sms\Views\" />
+    <Folder Include="cp\Views\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="ipm\Views\" />
+    <Folder Include="optimus\Views\" />
+    <Folder Include="mno\Views\" />
+    <Folder Include="cls\Views\" />
+    <Folder Include="morph\Views\" />
+    <Folder Include="map\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="sms\Functions\" />
+    <Folder Include="cp\Functions\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="ms\Functions\" />
+    <Folder Include="ipm\Functions\" />
+    <Folder Include="mno\Functions\" />
+    <Folder Include="rpt\Functions\" />
+    <Folder Include="rt\Functions\" />
+    <Folder Include="ms\Stored Procedures\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="map\Stored Procedures\" />
+    <Folder Include="optimus\Stored Procedures\" />
+    <Folder Include="cp\Stored Procedures\" />
+    <Folder Include="ipm\Stored Procedures\" />
+    <Folder Include="adm\" />
+    <Folder Include="adm\Stored Procedures\" />
+    <Folder Include="sms\Stored Procedures\" />
+    <Folder Include="rt\Stored Procedures\" />
+    <Folder Include="sap\" />
+    <Folder Include="sap\Stored Procedures\" />
+    <Folder Include="morph\Stored Procedures\" />
+    <Folder Include="mno\Stored Procedures\" />
+    <Folder Include="cls\Stored Procedures\" />
+    <Folder Include="ext\Stored Procedures\" />
+    <Folder Include="smsapi\" />
+    <Folder Include="smsapi\Stored Procedures\" />
+    <Folder Include="costprov\Stored Procedures\" />
+    <Folder Include="gtn\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
+    <Folder Include="sms\Sequences\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\AccountMODRConfig.sql" />
+    <Build Include="rt\Tables\RoutingPlan.sql" />
+    <Build Include="ms\Tables\FeatureFilter_SmsRouter.sql" />
+    <Build Include="cp\Tables\CmSummary.sql" />
+    <Build Include="rt\Tables\InboundCostCoverage.sql" />
+    <Build Include="dbo\Tables\SessionMatchingOpRoute.sql" />
+    <Build Include="ms\Tables\AccountManager.sql" />
+    <Build Include="dbo\Tables\AccountTotals.sql" />
+    <Build Include="sms\Tables\DimEncodingType.sql" />
+    <Build Include="map\Tables\IAM_Role.sql" />
+    <Build Include="ext\Tables\SmsTemplateNinjavan.sql" />
+    <Build Include="dbo\Tables\ApplicationSettings.sql" />
+    <Build Include="dbo\Tables\PlanRoutingFor_GlobalPricing.sql" />
+    <Build Include="rt\Tables\SubAccount_Default.sql" />
+    <Build Include="dbo\Tables\CarrierConnectionParameters.sql" />
+    <Build Include="optimus\Tables\SenderMaskingRules.sql" />
+    <Build Include="dbo\Tables\TrafficRecord.sql" />
+    <Build Include="mno\Tables\CurrencyRate.sql" />
+    <Build Include="morph\Tables\RoutingRule.sql" />
+    <Build Include="ms\Tables\UrlShortenBlacklist.sql" />
+    <Build Include="dbo\Tables\AccountMTConfig.sql" />
+    <Build Include="dbo\Tables\ConnectionAvailable.sql" />
+    <Build Include="rt\Tables\RoutingGroupTier.sql" />
+    <Build Include="rt\Tables\CustomerGroupSubAccount.sql" />
+    <Build Include="cp\Tables\BillingTransaction.sql" />
+    <Build Include="dbo\Tables\CustomerConnections.sql" />
+    <Build Include="dbo\Tables\CPCallingIP.sql" />
+    <Build Include="dbo\Tables\CostList.sql" />
+    <Build Include="sms\Tables\StatRecalcRequestSms.sql" />
+    <Build Include="morph\Tables\RoutingRuleFallback.sql" />
+    <Build Include="cp\Tables\UserSubAccount.sql" />
+    <Build Include="dbo\Tables\AccountCredit.sql" />
+    <Build Include="cp\Tables\CmSenderIdBlacklistGlobal.sql" />
+    <Build Include="dbo\Tables\News.sql" />
+    <Build Include="rt\Tables\InboundPriceCoverage.sql" />
+    <Build Include="cp\Tables\UiActivity.sql" />
+    <Build Include="cp\Tables\AccountWallet.sql" />
+    <Build Include="ms\Tables\Survey.sql" />
+    <Build Include="sms\Tables\StatSmsLogDaily.sql" />
+    <Build Include="rt\Tables\CustomerGroup.sql" />
+    <Build Include="cp\Tables\UserAccess.sql" />
+    <Build Include="ms\Tables\AccountMeta.sql" />
+    <Build Include="cp\Tables\AccountWalletFailedTrx.sql" />
+    <Build Include="dbo\Tables\QueueConfig.sql" />
+    <Build Include="dbo\Tables\AccountCampaign.sql" />
+    <Build Include="sms\Tables\StatSmsLatency.sql" />
+    <Build Include="cp\Tables\AccountWalletSnapshot.sql" />
+    <Build Include="map\Tables\SupplierCostUploaderFile.sql" />
+    <Build Include="cp\Tables\User2FA.sql" />
+    <Build Include="rt\Tables\ChangeEvent.sql" />
+    <Build Include="cp\Tables\UiNews.sql" />
+    <Build Include="sms\Tables\StatLatencyMTWavecell.sql" />
+    <Build Include="rt\Tables\RoutingTierCondition.sql" />
+    <Build Include="ipm\Tables\StatIpmLog.sql" />
+    <Build Include="dbo\Tables\TrafficInactivityMonitorConfig.sql" />
+    <Build Include="map\Tables\SupplierCostUploaderFileData.sql" />
+    <Build Include="cp\Tables\ReportTemplate.sql" />
+    <Build Include="cp\Tables\User2FA_Toggle.sql" />
+    <Build Include="ext\Tables\SmsTemplateRedmart.sql" />
+    <Build Include="ipm\Tables\IpmLog_ChangeLog.sql" />
+    <Build Include="sms\Tables\IpmLog.sql" />
+    <Build Include="dbo\Tables\TrafficStatusMonitorConfig.sql" />
+    <Build Include="rt\Tables\RoutingTierConditionMargin.sql" />
+    <Build Include="sms\Tables\DimConnType.sql" />
+    <Build Include="dbo\Tables\TrafficTotalsMonitorConfig.sql" />
+    <Build Include="sms\Tables\StatSmsLog.sql" />
+    <Build Include="cp\Tables\FreeCreditsLog.sql" />
+    <Build Include="dbo\Tables\PlanRoutingHistory.sql" />
+    <Build Include="costprov\Tables\PriceChangeLog.sql" />
+    <Build Include="ipm\Tables\CostPlanCoverage.sql" />
+    <Build Include="cp\Tables\UserOnboarding.sql" />
+    <Build Include="dbo\Tables\MasterQueues.sql" />
+    <Build Include="dbo\Tables\CPCostHistory.sql" />
+    <Build Include="ext\Tables\DomainFree.sql" />
+    <Build Include="costprov\Tables\EmailParser.sql" />
+    <Build Include="mno\Tables\CurrencyPair.sql" />
+    <Build Include="dbo\Tables\PlanRoutingBackup.sql" />
+    <Build Include="rt\Tables\SupplierOperatorConfig.sql" />
+    <Build Include="rt\Tables\PricingPlan.sql" />
+    <Build Include="mno\Tables\CurrencyRateSource.sql" />
+    <Build Include="sms\Tables\SmsLog.sql" />
+    <Build Include="costprov\Tables\RouteLookup.sql" />
+    <Build Include="sms\Tables\SurveyBatch.sql" />
+    <Build Include="sms\Tables\JobCalculate.sql" />
+    <Build Include="ms\Tables\TableChanges.sql" />
+    <Build Include="ms\Tables\FeatureFilter_RedactApi.sql" />
+    <Build Include="dbo\Tables\CustomerRouting.sql" />
+    <Build Include="rt\Tables\SubAccountForbiddenConn.sql" />
+    <Build Include="ipm\Tables\ChannelStatus.sql" />
+    <Build Include="dbo\Tables\Administrators.sql" />
+    <Build Include="dbo\Tables\PricingFormula.sql" />
+    <Build Include="sms\Tables\MonthlyActiveUsers.sql" />
+    <Build Include="ms\Tables\TableChangesForApp.sql" />
+    <Build Include="sms\Tables\DimContentType.sql" />
+    <Build Include="dbo\Tables\Invoices.sql" />
+    <Build Include="rt\Tables\RoutingTierConditionType.sql" />
+    <Build Include="ms\Tables\VirtualNumberRental.sql" />
+    <Build Include="rt\Tables\RoutingCoverageConditionStatus.sql" />
+    <Build Include="cp\Tables\FreeCreditCountry.sql" />
+    <Build Include="ms\Tables\DimHttpContentType.sql" />
+    <Build Include="dbo\Tables\CostSessionData_Backup.sql" />
+    <Build Include="rt\Tables\ChangeEventType.sql" />
+    <Build Include="morph\Tables\MonitorInfo.sql" />
+    <Build Include="sms\Tables\SmsMtScheduled.sql" />
+    <Build Include="ipm\Tables\PricingPlanChannel.sql" />
+    <Build Include="ms\Tables\MsisdnWhitelist.sql" />
+    <Build Include="dbo\Tables\ScheduledMessages.sql" />
+    <Build Include="sms\Tables\ETL_Reprocess.sql" />
+    <Build Include="dbo\Tables\TrafficErrorCode.sql" />
+    <Build Include="cp\Tables\CmFile.sql" />
+    <Build Include="ipm\Tables\FacebookUserMatching.sql" />
+    <Build Include="rt\Tables\PricingPlanCoverage.sql" />
+    <Build Include="mno\Tables\Currency.sql" />
+    <Build Include="cp\Tables\AccountFeatureToggle.sql" />
+    <Build Include="ipm\Tables\PricingPlanCoverage.sql" />
+    <Build Include="cp\Tables\CmGroup.sql" />
+    <Build Include="ms\Tables\AuthIP.sql" />
+    <Build Include="cp\Tables\CmCampaignSummary.sql" />
+    <Build Include="ms\Tables\AccountProductMeta.sql" />
+    <Build Include="rt\Tables\RoutingCustom.sql" />
+    <Build Include="ms\Tables\ClusterGroup.sql" />
+    <Build Include="ms\Tables\MasterQueues2.sql" />
+    <Build Include="cp\Tables\User.sql" />
+    <Build Include="ext\Tables\SmsTemplateDana.sql" />
+    <Build Include="dbo\Tables\Jobs.sql" />
+    <Build Include="rt\Tables\CustomerGroupCoverage.sql" />
+    <Build Include="sms\Tables\StatSmsLogSIDDaily.sql" />
+    <Build Include="cp\Tables\CmCampaign.sql" />
+    <Build Include="ms\Tables\CarrierMeta.sql" />
+    <Build Include="cp\Tables\AccountSSOConfig.sql" />
+    <Build Include="ipm\Tables\Channel.sql" />
+    <Build Include="map\Tables\IAM_Permission.sql" />
+    <Build Include="ext\Tables\SmsTemplateGoJek.sql" />
+    <Build Include="cp\Tables\BillingTopupMin.sql" />
+    <Build Include="ext\Tables\SmsTemplateLazada.sql" />
+    <Build Include="map\Tables\IAM_RolePermission.sql" />
+    <Build Include="gtn\Tables\CSG_Log.sql" />
+    <Build Include="rt\Tables\RoutingTierConditionBind.sql" />
+    <Build Include="rt\Tables\CustomerCoverageHistory.sql" />
+    <Build Include="gtn\Tables\CSG_Log_Status.sql" />
+    <Build Include="map\Tables\IAM_PermissionAction.sql" />
+    <Build Include="dbo\Tables\CostSessionData.sql" />
+    <Build Include="ms\Tables\QueueConfig.sql" />
+    <Build Include="gtn\Tables\CSG_Route.sql" />
+    <Build Include="rt\Tables\RoutingTierConn.sql" />
+    <Build Include="cp\Tables\CmSenderIdSuggestion.sql" />
+    <Build Include="rt\Tables\RoutingTier.sql" />
+    <Build Include="dbo\Tables\NumberingPlan.sql" />
+    <Build Include="ms\Tables\SubAccountTemplate.sql" />
+    <Build Include="ms\Tables\ApplicationSettings2.sql" />
+    <Build Include="gtn\Tables\CSG_TestCase.sql" />
+    <Build Include="sms\Tables\UrlShorten.sql" />
+    <Build Include="cp\Tables\Account.sql" />
+    <Build Include="gtn\Tables\CSG_TestNode.sql" />
+    <Build Include="dbo\Tables\OperatorIdLookup.sql" />
+    <Build Include="ipm\Tables\QueueConfig.sql" />
+    <Build Include="ms\Tables\DimVirtualNumberType.sql" />
+    <Build Include="rt\Tables\RoutingPlanCoverage.sql" />
+    <Build Include="sms\Tables\SmsLogConnMessageId.sql" />
+    <Build Include="sms\Tables\SurveyResponse.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="ipm\Tables\WhatsAppMedia.sql" />
+    <Build Include="dbo\Tables\Account.sql" />
+    <Build Include="rt\Tables\SupplierConn.sql" />
+    <Build Include="ms\Tables\MsisdnBlacklist.sql" />
+    <Build Include="ms\Tables\DimSFProductCode.sql" />
+    <Build Include="ms\Tables\AccountBlackList.sql" />
+    <Build Include="ipm\Tables\WhatsAppTemplateStatus.sql" />
+    <Build Include="sms\Tables\UrlShortenBaseUrl.sql" />
+    <Build Include="dbo\Tables\PlanRouting.sql" />
+    <Build Include="ms\Tables\DimCompanyEntity.sql" />
+    <Build Include="rt\Tables\SupplierCostCoverage.sql" />
+    <Build Include="cp\Tables\UserRole.sql" />
+    <Build Include="ms\Tables\CustomerWebhook.sql" />
+    <Build Include="rt\Tables\SupplierCostCoverageHistory.sql" />
+    <Build Include="rt\Tables\Route.sql" />
+    <Build Include="rt\Tables\SupplierCostCoverageFuture.sql" />
+    <Build Include="dbo\Tables\dialing_codes.sql" />
+    <Build Include="optimus\Tables\SenderRotationPool.sql" />
+    <Build Include="ms\Tables\WsmppClusterConfig.sql" />
+    <Build Include="cp\Tables\UserSetupGuide.sql" />
+    <Build Include="ms\Tables\VirtualNumber.sql" />
+    <Build Include="ipm\Tables\WeChatUserMatching.sql" />
+    <Build Include="cp\Tables\SecurityEventLog.sql" />
+    <Build Include="rt\Tables\RoutingView_Customer.sql" />
+    <Build Include="cp\Tables\CmContactField.sql" />
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="ms\Tables\FeatureFilter_SessionMessage.sql" />
+    <Build Include="dbo\Tables\CustomerConnectionParameters.sql" />
+    <Build Include="dbo\Tables\SessionCPStandardFormula.sql" />
+    <Build Include="dbo\Tables\Operator.sql" />
+    <Build Include="ipm\Tables\WhatsAppTemplate.sql" />
+    <Build Include="ms\Tables\AuthSmpp.sql" />
+    <Build Include="cp\Tables\CmGroupContact.sql" />
+    <Build Include="cp\Tables\SubAccountStat.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="cls\Tables\Category.sql" />
+    <Build Include="dbo\Tables\AccountCreditSnapshot.sql" />
+    <Build Include="cp\Tables\SmsReportExportConfig.sql" />
+    <Build Include="cp\Tables\CmFileType.sql" />
+    <Build Include="ms\Tables\FeatureFilter_MNOLookup.sql" />
+    <Build Include="sms\Tables\SmsLogClientMessageId.sql" />
+    <Build Include="ms\Tables\WebhookTokenCfg.sql" />
+    <Build Include="ms\Tables\RateLimits.sql" />
+    <Build Include="cp\Tables\CmFileState.sql" />
+    <Build Include="ms\Tables\SubAccount.sql" />
+    <Build Include="rt\Tables\Settings.sql" />
+    <Build Include="dbo\Tables\TrafficRecordArchive.sql" />
+    <Build Include="cp\Tables\BillingAutoTopup.sql" />
+    <Build Include="dbo\Tables\ClusterConfig.sql" />
+    <Build Include="cls\Tables\ClassificationPattern.sql" />
+    <Build Include="ext\Tables\SmsTemplateTix.sql" />
+    <Build Include="ms\Tables\UrlShortenDomainSubAccount.sql" />
+    <Build Include="dbo\Tables\PlanRoutingMode.sql" />
+    <Build Include="optimus\Tables\MessageBodyPrefixRules.sql" />
+    <Build Include="sms\Tables\SmsLogExportSettings.sql" />
+    <Build Include="sms\Tables\DlrToProcess.sql" />
+    <Build Include="cls\Tables\ClassificationRule.sql" />
+    <Build Include="ms\Tables\FeatureFilter_Optimus.sql" />
+    <Build Include="sms\Tables\SmsCallbackCache.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="rt\Tables\SupplierCostCoverageSID.sql" />
+    <Build Include="mno\Tables\Country.sql" />
+    <Build Include="ipm\Tables\ChannelFallback.sql" />
+    <Build Include="sms\Tables\StatUrlShorten.sql" />
+    <Build Include="dbo\Tables\CP_emailDomain_deprecated.sql" />
+    <Build Include="cls\Tables\ClassificationPatternDefault.sql" />
+    <Build Include="ms\Tables\FeatureFilter_AsyncDb.sql" />
+    <Build Include="ipm\Tables\ChannelType.sql" />
+    <Build Include="ms\Tables\GoogleVSMS_AccountAgent.sql" />
+    <Build Include="cp\Tables\CmContact.sql" />
+    <Build Include="dbo\Tables\CPCost.sql" />
+    <Build Include="ipm\Tables\WhatsAppTemplateCategory.sql" />
+    <Build Include="mno\Tables\Operator.sql" />
+    <Build Include="sms\Tables\DimSmsType.sql" />
+    <Build Include="ms\Tables\GoogleVSMS_Agent.sql" />
+    <Build Include="mno\Tables\OperatorIdLookup.sql" />
+    <Build Include="rt\Tables\RoutingTierConditionDR.sql" />
+    <Build Include="cp\Tables\CmSmsTemplate.sql" />
+    <Build Include="morph\Tables\Routing.sql" />
+    <Build Include="dbo\Tables\CP_configuration_deprecated.sql" />
+    <Build Include="sms\Tables\Error.sql" />
+    <Build Include="ms\Tables\FeatureFilter_Classifier.sql" />
+    <Build Include="cp\Tables\UserActivationClientIP.sql" />
+    <Build Include="sms\Tables\DimDCS.sql" />
+    <Build Include="optimus\Tables\MessageBodyPrefixMapping_Deprecated.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="mno\Tables\TimeZone.sql" />
+    <Build Include="ms\Tables\GoogleVSMS_SenderId.sql" />
+    <Build Include="dbo\Tables\PriceChangeAlertData.sql" />
+    <Build Include="rt\Tables\RoutingMeta.sql" />
+    <Build Include="sms\Tables\DimSmsStatus.sql" />
+    <Build Include="mno\Tables\TimeZoneHistory.sql" />
+    <Build Include="rt\Tables\RoutingTierConditionScope.sql" />
+    <Build Include="map\Tables\User.sql" />
+    <Build Include="dbo\Tables\StandardAccount.sql" />
+    <Build Include="sms\Tables\DlrLog.sql" />
+    <Build Include="cp\Tables\CmCampaignBatchIds.sql" />
+    <Build Include="optimus\Tables\SenderRotationPoolList.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Tables\MessageStatusByDays.sql" />
+    <Build Include="ipm\Tables\PricingPlan.sql" />
+    <Build Include="cp\Tables\CmCampaignStatus.sql" />
+    <Build Include="dbo\Tables\MessageStats.sql" />
+    <Build Include="ms\Tables\FeatureFilter_PriceOnDelivery.sql" />
+    <Build Include="sms\Tables\CacheSubaccountCountryLog.sql" />
+    <Build Include="ext\Tables\SmsTemplateFinmas.sql" />
+    <Build Include="map\Tables\IAM_UserRole.sql" />
+    <Build Include="dbo\Tables\AccountBalanceAlert.sql" />
+    <Build Include="ipm\Tables\PricingPlanSubscription.sql" />
+    <Build Include="dbo\Tables\RouteSelSessionData.sql" />
+    <Build Include="dbo\Tables\AccountCredentials.sql" />
+    <Build Include="ipm\Tables\WhatsAppTemplateLanguage.sql" />
+    <Build Include="dbo\Tables\WebInterfaceMapping.sql" />
+    <Build Include="ext\Tables\SmsTemplateOrienteexpress.sql" />
+    <Build Include="map\Tables\IAM_Action.sql" />
+    <Build Include="dbo\Tables\AccountRecord.sql" />
+    <Build Include="cp\Tables\AccountEmail.sql" />
+    <Build Include="dbo\Tables\AccountSMSLogReports.sql" />
+    <Build Include="ms\Tables\UrlShortenDomain.sql" />
+    <Build Include="cp\Tables\UserActivation.sql" />
+    <Build Include="dbo\Tables\CarrierConnections.sql" />
+    <Build Include="ext\Tables\SmsTemplateOvo.sql" />
+    <Build Include="ipm\Tables\PricingPlanSubAccount.sql" />
+    <Build Include="dbo\Tables\AccountBillingInformation.sql" />
+    <Build Include="ms\Tables\AuthApi.sql" />
+    <Build Include="rt\Tables\RoutingGroup.sql" />
+    <Build Include="ms\Tables\FeatureFilter_SMSCDLR.sql" />
+    <Build Include="rt\Tables\SupplierCostCoverageSIDGroup.sql" />
+    <Build Include="rt\Tables\RoutingView_Operator.sql" />
+    <Build Include="dbo\Tables\CostSession.sql" />
+    <Build Include="ext\Tables\SmsTemplateReddoorz_ID.sql" />
+    <Build Include="rt\Views\vwCustomerGroupSubAccount.sql" />
+    <Build Include="rpt\Views\bi_survey.sql" />
+    <Build Include="ms\Views\vwQueueConfig.sql" />
+    <Build Include="rpt\Views\bi_SurveyBatch.sql" />
+    <Build Include="rpt\Views\bi_UrlShortenDomainSubAccount.sql" />
+    <Build Include="rpt\Views\bi_vwStatSmsLogDaily.sql" />
+    <Build Include="rt\Views\vwRoutingPlanCoverageConn.sql" />
+    <Build Include="rpt\Views\bi_AccountCreditSnapshot.sql" />
+    <Build Include="rt\Views\vwRoutingPlanCoverageAllConn.sql" />
+    <Build Include="sms\Views\vwAccount.sql" />
+    <Build Include="cp\Views\vwAccount.sql" />
+    <Build Include="rpt\Views\bi_vwstaturlshorten.sql" />
+    <Build Include="cp\Views\vwAccountEmail.sql" />
+    <Build Include="dbo\Views\vwNewID.sql" />
+    <Build Include="ipm\Views\vwPricingPlanCoverage.sql" />
+    <Build Include="ms\Views\vwSubAccount.sql" />
+    <Build Include="optimus\Views\vwSenderMaskingRules.sql" />
+    <Build Include="sms\Views\vwSenderStats.sql" />
+    <Build Include="cp\Views\vwCmCampaign.sql" />
+    <Build Include="cp\Views\vwAccountWallet.sql" />
+    <Build Include="sms\Views\vwDlrLog.sql" />
+    <Build Include="dbo\Views\AccountCredit_v2.sql" />
+    <Build Include="rt\Views\vwInboundCostCoverage.sql" />
+    <Build Include="rt\Views\vwInboundPriceCoverage.sql" />
+    <Build Include="mno\Views\vwCountry.sql" />
+    <Build Include="rt\Views\RoutingTierConn_Active.sql" />
+    <Build Include="rt\Views\vwRoute.sql" />
+    <Build Include="cp\Views\vwUserAccess.sql" />
+    <Build Include="mno\Views\vwOperator.sql" />
+    <Build Include="cp\Views\vwBillingTransaction.sql" />
+    <Build Include="sms\Views\vwStatSmsLogDaily.sql" />
+    <Build Include="rpt\Views\bi_DimSmsStatus.sql" />
+    <Build Include="rpt\Views\bi_CmCampaignBatchIds.sql" />
+    <Build Include="rpt\Views\bi_vwCmCampaign.sql" />
+    <Build Include="rt\Views\vwCustomerGroupCoverage.sql" />
+    <Build Include="rpt\Views\bi_Users.sql" />
+    <Build Include="cls\Views\vwClassificationPattern.sql" />
+    <Build Include="rpt\Views\bi_AccountBillingInformation.sql" />
+    <Build Include="rpt\Views\bi_AccountBlacklist.sql" />
+    <Build Include="rpt\Views\bi_Free_email_domains.sql" />
+    <Build Include="rpt\Views\vwCustomerGroupCoverageAll.sql" />
+    <Build Include="rpt\Views\bi_vwStatSmsLog.sql" />
+    <Build Include="ipm\Views\vwPricingPlanSubAccount.sql" />
+    <Build Include="ms\Views\vwVirtualNumber.sql" />
+    <Build Include="ms\Views\AuthApi_Active.sql" />
+    <Build Include="rpt\Views\bi_UserActivation.sql" />
+    <Build Include="cp\Views\vwUserSubAccount.sql" />
+    <Build Include="rpt\Views\bi_TrafficRecord.sql" />
+    <Build Include="sms\Views\vwStatSmsLogSIDDaily.sql" />
+    <Build Include="rpt\Views\bi_Operator.sql" />
+    <Build Include="rpt\Views\bi_Messagestats.sql" />
+    <Build Include="sms\Views\vwSmsLog.sql" />
+    <Build Include="rpt\Views\bi_Cmcampaign.sql" />
+    <Build Include="rpt\Views\bi_PlanRouting.sql" />
+    <Build Include="rpt\Views\bi_CustomReport_Accomerce.sql" />
+    <Build Include="ms\Views\vwSurvey.sql" />
+    <Build Include="rt\Views\vwSupplierConn_Uptime.sql" />
+    <Build Include="rpt\Views\bi_OperatorIdLookup.sql" />
+    <Build Include="rpt\Views\bi_StandardAccount.sql" />
+    <Build Include="rpt\Views\bi_CpCost.sql" />
+    <Build Include="rpt\Views\bi_CarrierMeta.sql" />
+    <Build Include="rpt\Views\bi_CpCostHistory.sql" />
+    <Build Include="rpt\Views\bi_AccountCredentials.sql" />
+    <Build Include="rpt\Views\bi_AccountCredit.sql" />
+    <Build Include="dbo\Views\AccountDetailled.sql" />
+    <Build Include="morph\Views\vw_Routing.sql" />
+    <Build Include="rpt\Views\bi_PlanRoutingHistory.sql" />
+    <Build Include="rt\Views\vwRoutingTier.sql" />
+    <Build Include="map\Views\vwSupplierCostUploaderFileData.sql" />
+    <Build Include="rpt\Views\bi_rt.vwRoutingPlanCoverageAllConn.sql" />
+    <Build Include="rpt\Views\bi_AccountMeta.sql" />
+    <Build Include="rt\Views\vwRoutingPlanCoverage.sql" />
+    <Build Include="rpt\Views\bi_FeatureFilter_SmsRouter.sql" />
+    <Build Include="rt\Views\vwRoutingTierConnMap.sql" />
+    <Build Include="rt\Views\vwSupplierCostCoverageSID.sql" />
+    <Build Include="rpt\Views\bi_subaccount_default.sql" />
+    <Build Include="cp\Views\vwUser.sql" />
+    <Build Include="rt\Views\vwSupplierCostCoverageHistory.sql" />
+    <Build Include="rt\Views\vwPricingPlanCoverage.sql" />
+    <Build Include="rpt\Views\bi_routingplan.sql" />
+    <Build Include="rpt\Views\bi_pricingplan.sql" />
+    <Build Include="rt\Views\vwSupplierOperatorConfig.sql" />
+    <Build Include="rpt\Views\bi_vwSmsLog.sql" />
+    <Build Include="rpt\Views\bi_vwDlrLog.sql" />
+    <Build Include="sms\Views\vwStatUrlShorten.sql" />
+    <Build Include="rpt\Views\bi_user.sql" />
+    <Build Include="rpt\Views\bi_AccountRecord.sql" />
+    <Build Include="rpt\Views\bi_routingplancoverage.sql" />
+    <Build Include="rpt\Views\bi_invoices.sql" />
+    <Build Include="rpt\Views\bi_pricingplancoverage.sql" />
+    <Build Include="rpt\Views\bi_Account.sql" />
+    <Build Include="ms\Views\vwVirtualNumberRental.sql" />
+    <Build Include="rt\Views\vwSubAccount_Default.sql" />
+    <Build Include="cp\Views\vwBillingAutoTopup.sql" />
+    <Build Include="rpt\Views\bi_JobCalculate.sql" />
+    <Build Include="sms\Views\vwIpmLog.sql" />
+    <Build Include="ipm\Views\vwChannelFallback.sql" />
+    <Build Include="sms\Views\vwStatSmsLog_Last10d.sql" />
+    <Build Include="dbo\Views\PlanRoutingByOperator.sql" />
+    <Build Include="ipm\Views\vwWhatsAppTemplate.sql" />
+    <Build Include="sms\Views\vwStatSmsLog.sql" />
+    <Build Include="ms\Views\vwFeatureFilter_Optimus.sql" />
+    <Build Include="rpt\Views\bi_Country.sql" />
+    <Build Include="rt\Views\vwSupplierCostCoverage_Active.sql" />
+    <Build Include="rpt\Views\AccountCreditSnapshot.sql" />
+    <Build Include="rt\Views\vwRoutingTierConn_Active.sql" />
+    <Build Include="ms\Views\vwUrlShortenDomainSubAccount.sql" />
+    <Build Include="rpt\Views\bi_CP_Users.sql" />
+    <Build Include="Security\role_app_map.sql" />
+    <Build Include="Security\role_app_powerbi2.sql" />
+    <Build Include="Security\db_executor.sql" />
+    <Build Include="Security\role_linked_mno.sql" />
+    <Build Include="Security\role_app_smpplogins.sql" />
+    <Build Include="Security\role_app_dpm.sql" />
+    <Build Include="Security\role_app_reportingapi.sql" />
+    <Build Include="Security\role_team_ops.sql" />
+    <Build Include="Security\role_team_eng.sql" />
+    <Build Include="Security\role_team_product.sql" />
+    <Build Include="Security\role_team_ops_l2.sql" />
+    <Build Include="Security\role_app_sap.sql" />
+    <Build Include="Security\role_app_modeanalytics.sql" />
+    <Build Include="Security\role_app_messagesphere.sql" />
+    <Build Include="Security\role_app_adminportal.sql" />
+    <Build Include="Security\role_app_customerportal.sql" />
+    <Build Include="Security\role_app_morpheus.sql" />
+    <Build Include="Security\role_app_kdb.sql" />
+    <Build Include="Security\role_app_dbchanges.sql" />
+    <Build Include="Security\role_app_smsapi.sql" />
+    <Build Include="Security\role_app_gtn.sql" />
+    <Build Include="Security\role_app_smpp.sql" />
+    <Build Include="Security\role_app_cp.sql" />
+    <Build Include="Security\role_app_cp_lambda.sql" />
+    <Build Include="Security\role_app_currencyuploader.sql" />
+    <Build Include="Security\role_team_fin.sql" />
+    <Build Include="Security\role_app_supplier.sql" />
+    <Build Include="Security\role_app_powerbi1.sql" />
+    <Build Include="Security\role_app_classifier.sql" />
+    <Build Include="Security\role_app_voice_api.sql" />
+    <Build Include="Security\role_team_presale.sql" />
+    <Build Include="Security\role_app_urlexpander.sql" />
+    <Build Include="Security\role_app_optimus.sql" />
+    <Build Include="Security\role_team_eng_read.sql" />
+    <Build Include="Security\role_team_dev_cp.sql" />
+    <Build Include="Security\role_team_dev_map.sql" />
+    <Build Include="Security\role_fin_adv.sql" />
+    <Build Include="Security\role_team_ops_l1.sql" />
+    <Build Include="Security\role_team_ops_chatapps.sql" />
+    <Build Include="Security\role_app_etl.sql" />
+    <Build Include="Security\role_app_puppetvalidator.sql" />
+    <Build Include="Security\role_app_msapi.sql" />
+    <Build Include="Security\WAVECELL_Product Team.sql" />
+    <Build Include="Security\WAVECELL_Product Team_1.sql" />
+    <Build Include="Security\app_map.sql" />
+    <Build Include="Security\app_map_1.sql" />
+    <Build Include="Security\user_fin_HV.sql" />
+    <Build Include="Security\user_fin_HV_1.sql" />
+    <Build Include="Security\app_powerbi2.sql" />
+    <Build Include="Security\app_powerbi2_1.sql" />
+    <Build Include="Security\app_web_adminportal.sql" />
+    <Build Include="Security\app_web_adminportal_1.sql" />
+    <Build Include="Security\app_web_api.sql" />
+    <Build Include="Security\app_web_api_1.sql" />
+    <Build Include="Security\app_web_customerportal.sql" />
+    <Build Include="Security\app_web_customerportal_1.sql" />
+    <Build Include="Security\user_product_GF.sql" />
+    <Build Include="Security\user_product_GF_1.sql" />
+    <Build Include="Security\app_smpplogins.sql" />
+    <Build Include="Security\app_smpplogins_1.sql" />
+    <Build Include="Security\user_MM.sql" />
+    <Build Include="Security\user_MM_1.sql" />
+    <Build Include="Security\app_dpm.sql" />
+    <Build Include="Security\app_dpm_1.sql" />
+    <Build Include="Security\user_HK.sql" />
+    <Build Include="Security\user_HK_1.sql" />
+    <Build Include="Security\user_LV_ops.sql" />
+    <Build Include="Security\user_LV_ops_1.sql" />
+    <Build Include="Security\user_SH.sql" />
+    <Build Include="Security\user_SH_1.sql" />
+    <Build Include="Security\app_modeanalytics.sql" />
+    <Build Include="Security\app_modeanalytics_1.sql" />
+    <Build Include="Security\app_messagesphere2.sql" />
+    <Build Include="Security\app_messagesphere2_1.sql" />
+    <Build Include="Security\app_morpheus.sql" />
+    <Build Include="Security\app_morpheus_1.sql" />
+    <Build Include="Security\app_kdb.sql" />
+    <Build Include="Security\app_kdb_1.sql" />
+    <Build Include="Security\app_smsapi.sql" />
+    <Build Include="Security\app_smsapi_1.sql" />
+    <Build Include="Security\app_gtn.sql" />
+    <Build Include="Security\app_gtn_1.sql" />
+    <Build Include="Security\user_FIN.sql" />
+    <Build Include="Security\user_FIN_1.sql" />
+    <Build Include="Security\app_smpp.sql" />
+    <Build Include="Security\app_smpp_1.sql" />
+    <Build Include="Security\user_CP_ops.sql" />
+    <Build Include="Security\user_CP_ops_1.sql" />
+    <Build Include="Security\app_cp.sql" />
+    <Build Include="Security\app_cp_1.sql" />
+    <Build Include="Security\user_BK.sql" />
+    <Build Include="Security\user_BK_1.sql" />
+    <Build Include="Security\app_costprov.sql" />
+    <Build Include="Security\app_costprov_1.sql" />
+    <Build Include="Security\ref_smslog_read.sql" />
+    <Build Include="Security\app_currencyuploader.sql" />
+    <Build Include="Security\app_currencyuploader_1.sql" />
+    <Build Include="Security\app_supplier.sql" />
+    <Build Include="Security\app_supplier_1.sql" />
+    <Build Include="Security\app_powerbi.sql" />
+    <Build Include="Security\app_powerbi_1.sql" />
+    <Build Include="Security\app_zabbix.sql" />
+    <Build Include="Security\app_zabbix_1.sql" />
+    <Build Include="Security\user_IV.sql" />
+    <Build Include="Security\user_IV_1.sql" />
+    <Build Include="Security\app_urlexpander.sql" />
+    <Build Include="Security\app_urlexpander_1.sql" />
+    <Build Include="Security\app_classifier.sql" />
+    <Build Include="Security\app_classifier_1.sql" />
+    <Build Include="Security\user_dev_tony.sql" />
+    <Build Include="Security\user_dev_tony_1.sql" />
+    <Build Include="Security\user_HC_ops.sql" />
+    <Build Include="Security\user_HC_ops_1.sql" />
+    <Build Include="Security\user_PA_ops.sql" />
+    <Build Include="Security\user_PA_ops_1.sql" />
+    <Build Include="Security\user_JP_ops.sql" />
+    <Build Include="Security\user_JP_ops_1.sql" />
+    <Build Include="Security\user_CV_ops.sql" />
+    <Build Include="Security\user_SL_ops.sql" />
+    <Build Include="Security\user_SL_ops_1.sql" />
+    <Build Include="Security\app_reportingapi.sql" />
+    <Build Include="Security\app_reportingapi_1.sql" />
+    <Build Include="Security\WAVECELL_Ops Team.sql" />
+    <Build Include="Security\WAVECELL_Ops Team_1.sql" />
+    <Build Include="Security\user_dev_MO.sql" />
+    <Build Include="Security\user_dev_MO_1.sql" />
+    <Build Include="Security\user_dev_NH.sql" />
+    <Build Include="Security\user_dev_NH_1.sql" />
+    <Build Include="Security\user_dev_RT.sql" />
+    <Build Include="Security\user_dev_RT_1.sql" />
+    <Build Include="Security\app_sap.sql" />
+    <Build Include="Security\app_sap_1.sql" />
+    <Build Include="Security\user_RL_sales.sql" />
+    <Build Include="Security\user_RL_sales_1.sql" />
+    <Build Include="Security\user_dev_RL.sql" />
+    <Build Include="Security\user_dev_RL_1.sql" />
+    <Build Include="Security\app_voice_api.sql" />
+    <Build Include="Security\app_voice_api_1.sql" />
+    <Build Include="Security\user_ops_RA.sql" />
+    <Build Include="Security\user_ops_RA_1.sql" />
+    <Build Include="Security\user_ops_DA.sql" />
+    <Build Include="Security\user_ops_DA_1.sql" />
+    <Build Include="Security\user_ops_ED.sql" />
+    <Build Include="Security\user_ops_ED_1.sql" />
+    <Build Include="Security\WAVECELL_Dev team.sql" />
+    <Build Include="Security\WAVECELL_Dev team_1.sql" />
+    <Build Include="Security\user_ext_sap.sql" />
+    <Build Include="Security\user_ext_sap_1.sql" />
+    <Build Include="Security\user_ops_MA.sql" />
+    <Build Include="Security\user_ops_MA_1.sql" />
+    <Build Include="Security\user_dev_AM.sql" />
+    <Build Include="Security\user_dev_AM_1.sql" />
+    <Build Include="Security\app_etl.sql" />
+    <Build Include="Security\app_etl_1.sql" />
+    <Build Include="Security\app_voice_msg_api.sql" />
+    <Build Include="Security\app_voice_msg_api_1.sql" />
+    <Build Include="Security\user_ops_markv.sql" />
+    <Build Include="Security\user_ops_markv_1.sql" />
+    <Build Include="Security\user_ops_kristof.sql" />
+    <Build Include="Security\user_ops_kristof_1.sql" />
+    <Build Include="Security\user_ops_jose.sql" />
+    <Build Include="Security\user_ops_jose_1.sql" />
+    <Build Include="Security\app_puppetvalidator.sql" />
+    <Build Include="Security\app_puppetvalidator_1.sql" />
+    <Build Include="Security\user_ops_reil.sql" />
+    <Build Include="Security\user_ops_reil_1.sql" />
+    <Build Include="Security\user_dev_antonio.sql" />
+    <Build Include="Security\user_dev_antonio_1.sql" />
+    <Build Include="Security\user_ops_ralph.sql" />
+    <Build Include="Security\user_ops_ralph_1.sql" />
+    <Build Include="Security\app_msapi.sql" />
+    <Build Include="Security\app_msapi_1.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="sms\Functions\fnGetSmsTypeId.sql" />
+    <Build Include="sms\Functions\fnGetStatusId.sql" />
+    <Build Include="sms\Functions\fnGetEncodingTypeId.sql" />
+    <Build Include="sms\Functions\fnGetConnTypeId.sql" />
+    <Build Include="cp\Functions\fnGetAccountUid.sql" />
+    <Build Include="sms\Functions\fnSmsSegments.sql" />
+    <Build Include="dbo\Functions\fnGenerateRandomString.sql" />
+    <Build Include="ms\Functions\ClusterGroup_GetByHost.sql" />
+    <Build Include="ipm\Functions\Channel_BelongsToSubAccountOrIsSandbox.sql" />
+    <Build Include="ms\Functions\ClusterGroup_GetId.sql" />
+    <Build Include="sms\Functions\fnGetDCS.sql" />
+    <Build Include="dbo\Functions\fnStripCharacters.sql" />
+    <Build Include="dbo\Functions\fnTimeRoundDown.sql" />
+    <Build Include="dbo\Functions\CURRENT_TIMESTAMP_STR.sql" />
+    <Build Include="dbo\Functions\Log_ROWCOUNT.sql" />
+    <Build Include="dbo\Functions\fnTimeRoundUp.sql" />
+    <Build Include="mno\Functions\CurrencyConverter.sql" />
+    <Build Include="ms\Functions\GetDRLevel.sql" />
+    <Build Include="sms\Functions\fnGetEncodingTypeIdByDCS.sql" />
+    <Build Include="dbo\Functions\fnTimeRountup.sql" />
+    <Build Include="dbo\Functions\GetBasePathFromUrl.sql" />
+    <Build Include="dbo\Functions\Base62Decode.sql" />
+    <Build Include="dbo\Functions\Base62Encode.sql" />
+    <Build Include="sms\Functions\fnSmsSegmentsV2.sql" />
+    <Build Include="dbo\Functions\fnTimeRountdown.sql" />
+    <Build Include="rpt\Functions\fnLatencyLiveData.sql" />
+    <Build Include="dbo\Functions\SplitString_Int.sql" />
+    <Build Include="dbo\Functions\SplitString.sql" />
+    <Build Include="rpt\Functions\fnDeliveryRateLiveData.sql" />
+    <Build Include="rpt\Functions\fnWavecellLatencyLiveData.sql" />
+    <Build Include="cp\Functions\fnCoverageBySubAccount.sql" />
+    <Build Include="rt\Functions\fnSMSPricingCoverage.sql" />
+    <Build Include="cp\Functions\fnSubAccount_GetByUser.sql" />
+    <Build Include="rpt\Functions\fnWavecellLatencyLiveData_v2.sql" />
+    <Build Include="ipm\Functions\fnGetIpmLogData.sql" />
+    <Build Include="rt\Functions\fnGetSubAccountPrice.sql" />
+    <Build Include="dbo\Functions\SplitStrings_XML.sql" />
+    <Build Include="ms\Stored Procedures\QueueConfig_MtOutPublish.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateMORecordStatusCIdBySubAccountIdUmid.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroup_SubAccount_Assign.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetGlobalPriceByCountry.sql" />
+    <Build Include="optimus\Stored Procedures\SenderRotationPoolList_GetNewSenderId.sql" />
+    <Build Include="ms\Stored Procedures\SubAccount_GetConfig.sql" />
+    <Build Include="dbo\Stored Procedures\sp_SearchTrafficRecord2.sql" />
+    <Build Include="cp\Stored Procedures\ChatApps_Pricing_GetList.sql" />
+    <Build Include="cp\Stored Procedures\job_SyncUsersFromCPv1.sql" />
+    <Build Include="ipm\Stored Procedures\ChannelFallback_GetSandboxSettings.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroupCoverage_Insert.sql" />
+    <Build Include="cp\Stored Procedures\VirtualNumberRental_Get.sql" />
+    <Build Include="optimus\Stored Procedures\SenderRotationPoolList_UpdateNextAvailability.sql" />
+    <Build Include="adm\Stored Procedures\Administrators_CheckCredentials.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="map\Stored Procedures\Account_Create.sql" />
+    <Build Include="ms\Stored Procedures\QueueConfig_MtOutConsume.sql" />
+    <Build Include="sms\Stored Procedures\IpmLog_GetMo.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroupCoverage_Update.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetCustomerPriceCheckByCountry.sql" />
+    <Build Include="map\Stored Procedures\Account_GetMany.sql" />
+    <Build Include="map\Stored Procedures\RoutingPlan_Insert.sql" />
+    <Build Include="map\Stored Procedures\Account_Email_Create.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroupCoverage_Delete.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="map\Stored Procedures\Account_SubAccount_GetAll.sql" />
+    <Build Include="map\Stored Procedures\RoutingPlan_Update.sql" />
+    <Build Include="map\Stored Procedures\Account_Email_Delete.sql" />
+    <Build Include="ms\Stored Procedures\PricingPlanChannel_GetAll.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroupCoverage_GetById.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetCustomer_Toptwo_SubaccountByCountry.sql" />
+    <Build Include="map\Stored Procedures\AccountCredit_Get.sql" />
+    <Build Include="dbo\Stored Procedures\sp_DeliveryStatForSubAccount.sql" />
+    <Build Include="map\Stored Procedures\RoutingPlan_Delete.sql" />
+    <Build Include="map\Stored Procedures\Account_Email_GetMany.sql" />
+    <Build Include="ms\Stored Procedures\PricingPlanSubscription_GetAll.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroup_SubAccount_Get_v2.sql" />
+    <Build Include="map\Stored Procedures\SubAccount_GetList.sql" />
+    <Build Include="map\Stored Procedures\AccountManager_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\sp_CreditAccount.sql" />
+    <Build Include="map\Stored Procedures\RoutingPlanCoverage_Insert.sql" />
+    <Build Include="map\Stored Procedures\Account_Email_Update.sql" />
+    <Build Include="dbo\Stored Procedures\sp_RoutingMatrix_PopulateCostList.sql" />
+    <Build Include="sms\Stored Procedures\MonthlyActiveUsers_Update.sql" />
+    <Build Include="map\Stored Procedures\RoutingPlanCoverage_CountryList.sql" />
+    <Build Include="rt\Stored Procedures\CustomerGroupSubAccount_LoadAll.sql" />
+    <Build Include="map\Stored Procedures\AccountMeta_Get.sql" />
+    <Build Include="map\Stored Procedures\RoutingTierConn_Insert.sql" />
+    <Build Include="sap\Stored Procedures\SmsLog_ExportTail_v3.sql" />
+    <Build Include="cp\Stored Procedures\SMS_Engage_SubAccounts_GetAll.sql" />
+    <Build Include="rt\Stored Procedures\CustomerGroupCoverage_LoadAll.sql" />
+    <Build Include="map\Stored Procedures\AccountMeta_Update.sql" />
+    <Build Include="map\Stored Procedures\RoutingTierConn_Update.sql" />
+    <Build Include="map\Stored Procedures\SupplierCostUploaderFile_GetAll.sql" />
+    <Build Include="cp\Stored Procedures\CmSummary_Recalculate.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroupCoverage_GetSubAccountsWithInheritedCoverage.sql" />
+    <Build Include="map\Stored Procedures\AccountProductMeta_Get.sql" />
+    <Build Include="map\Stored Procedures\RoutingTierConn_Delete.sql" />
+    <Build Include="rt\Stored Procedures\SupplierConn_Ops_Delete.sql" />
+    <Build Include="map\Stored Procedures\SupplierCostUploaderFile_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\sp_RoutingMatrix_PopulateCustomerConnections.sql" />
+    <Build Include="cp\Stored Procedures\UserSetupGuide_GetByUserId.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroup_Insert.sql" />
+    <Build Include="map\Stored Procedures\RoutingTier_Insert.sql" />
+    <Build Include="ms\Stored Procedures\SubAccount_Ops_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\sp_RoutingMatrix_PopulateCustomerRouting.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroup_Update.sql" />
+    <Build Include="map\Stored Procedures\RoutingTier_Update.sql" />
+    <Build Include="cp\Stored Procedures\UserSetupGuide_Update.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroup_Delete.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\usp_GetReportByCarrierDetails.sql" />
+    <Build Include="map\Stored Procedures\RoutingTier_Delete.sql" />
+    <Build Include="ipm\Stored Procedures\ChannelFallback_GetAll.sql" />
+    <Build Include="cp\Stored Procedures\User_UpdatePassword.sql" />
+    <Build Include="cp\Stored Procedures\User_IsEmailAlreadyUsed.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetReportByCountryDetails.sql" />
+    <Build Include="cp\Stored Procedures\CmSenderIdSuggestion_Remove.sql" />
+    <Build Include="map\Stored Procedures\RoutingGroup_Insert.sql" />
+    <Build Include="sms\Stored Procedures\IpmLog_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\sp_RoutingMatrix_PopulateRouteList.sql" />
+    <Build Include="cp\Stored Procedures\Country_GetAll.sql" />
+    <Build Include="cp\Stored Procedures\UserActivation_Create.sql" />
+    <Build Include="map\Stored Procedures\RoutingGroup_Update.sql" />
+    <Build Include="ms\Stored Procedures\SubAccount_SetupBasics_Voice.sql" />
+    <Build Include="cp\Stored Procedures\User_GetByUserId.sql" />
+    <Build Include="map\Stored Procedures\RoutingGroup_Delete.sql" />
+    <Build Include="map\Stored Procedures\CPUser_GetEmailsBySubAccount_v2.sql" />
+    <Build Include="map\Stored Procedures\SupplierCostCoverage_Update.sql" />
+    <Build Include="cp\Stored Procedures\CmContact_Create.sql" />
+    <Build Include="cp\Stored Procedures\UserActivation_Validate.sql" />
+    <Build Include="map\Stored Procedures\SupplierCostUploaderFileData_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\sp_RoutingMatrix_PopulateAccountMatrix.sql" />
+    <Build Include="cp\Stored Procedures\CmContact_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CP_GetInvoices.sql" />
+    <Build Include="cp\Stored Procedures\Account_IsAlreadyUsed.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetFormula.sql" />
+    <Build Include="cp\Stored Procedures\SmsLog_CampaignDownload.sql" />
+    <Build Include="rt\Stored Procedures\KannelStatusUrl_Get.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="cp\Stored Procedures\Survey_GetSurveyResponses.sql" />
+    <Build Include="dbo\Stored Procedures\sp_RoutingMatrix_PopulateCarrierConnections.sql" />
+    <Build Include="cp\Stored Procedures\CmContact_GetOne.sql" />
+    <Build Include="cp\Stored Procedures\Account_Create.sql" />
+    <Build Include="morph\Stored Procedures\RoutingRuleFallback_GetAll.sql" />
+    <Build Include="map\Stored Procedures\RoutingPlanCoverage_Update.sql" />
+    <Build Include="mno\Stored Procedures\Operator_Ops_Delete.sql" />
+    <Build Include="cp\Stored Procedures\Survey_GetSummaryByDates.sql" />
+    <Build Include="cp\Stored Procedures\CmContact_GetMany.sql" />
+    <Build Include="map\Stored Procedures\RoutingPlanCoverage_Delete.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroup_SubAccount_GetByCustomerGroupIds.sql" />
+    <Build Include="cp\Stored Procedures\CmContact_FieldSet.sql" />
+    <Build Include="map\Stored Procedures\BillingOverdraft_Update.sql" />
+    <Build Include="ms\Stored Procedures\AccountMTConfig_GetDLRLevels.sql" />
+    <Build Include="sms\Stored Procedures\IpmLog_DWHExport.sql" />
+    <Build Include="map\Stored Procedures\Pricing_UpdatePriceNotified.sql" />
+    <Build Include="cp\Stored Procedures\CmContact_FieldDelete.sql" />
+    <Build Include="cp\Stored Procedures\User_Create.sql" />
+    <Build Include="dbo\Stored Procedures\usp_InsertCostSessionData.sql" />
+    <Build Include="map\Stored Procedures\BillingTransaction_GetMany.sql" />
+    <Build Include="ms\Stored Procedures\FeatureFilter_SmsRouter_GetAll.sql" />
+    <Build Include="ms\Stored Procedures\CarrierConnections_GetAll.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="map\Stored Procedures\SubAccount_GetUngroupedCount.sql" />
+    <Build Include="dbo\Stored Procedures\sp_RoutingMatrix_PopulateCountries.sql" />
+    <Build Include="cp\Stored Procedures\CmGroup_Create.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetDistinctMccMnc.sql" />
+    <Build Include="map\Stored Procedures\BillingTransaction_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\sp_ProblematicRoutes.sql" />
+    <Build Include="sap\Stored Procedures\Netsuite_SmsUsage_SendEmail.sql" />
+    <Build Include="map\Stored Procedures\SupplierCostUploaderFileData_GetByFileId.sql" />
+    <Build Include="dbo\Stored Procedures\sp_RoutingMatrix_PopulateOperators.sql" />
+    <Build Include="sms\Stored Procedures\job_SmsLog_CalculateLatencyStats.sql" />
+    <Build Include="cp\Stored Procedures\CmGroup_Update.sql" />
+    <Build Include="map\Stored Procedures\CompanyEntity_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetPriceByCountry.sql" />
+    <Build Include="cp\Stored Procedures\UserSubAccount_Get.sql" />
+    <Build Include="sms\Stored Procedures\MAP_RoutingManager_ConnStats.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="map\Stored Procedures\SupplierCostUploaderFileData_Apply.sql" />
+    <Build Include="dbo\Stored Procedures\sp_RoutingMatrix_PopulateCountriesWithIntersectingCode.sql" />
+    <Build Include="cp\Stored Procedures\CmGroup_Delete.sql" />
+    <Build Include="map\Stored Procedures\Country_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetInvoices.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroup_GetBySubAccountId.sql" />
+    <Build Include="map\Stored Procedures\RoutingManager_SupplierList.sql" />
+    <Build Include="sms\Stored Procedures\IpmLog_Update.sql" />
+    <Build Include="sms\Stored Procedures\job_DlrLog_CalculateLatency.sql" />
+    <Build Include="cp\Stored Procedures\CmGroup_ContactAddOne.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroupCoverage_Check.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetInvoicesbyrefcode.sql" />
+    <Build Include="cp\Stored Procedures\SubAccount_GetByUser.sql" />
+    <Build Include="map\Stored Procedures\PricingPlan_Insert.sql" />
+    <Build Include="cp\Stored Procedures\CmGroup_ContactDelete.sql" />
+    <Build Include="map\Stored Procedures\User_GetAll.sql" />
+    <Build Include="cp\Stored Procedures\UserAccess_RoleAdd.sql" />
+    <Build Include="map\Stored Procedures\PricingPlan_Update.sql" />
+    <Build Include="sms\Stored Procedures\job_IpmLog_CalculateStats.sql" />
+    <Build Include="cp\Stored Procedures\User2FA_Create.sql" />
+    <Build Include="cp\Stored Procedures\CmGroup_GetOne.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="sms\Stored Procedures\UrlShorten_UpdateSurveyStats.sql" />
+    <Build Include="cp\Stored Procedures\UserAccess_RoleRemove.sql" />
+    <Build Include="cls\Stored Procedures\Category_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetRecordByCorrelationIdDestination.sql" />
+    <Build Include="sms\Stored Procedures\job_IpmLog_UpdateStats.sql" />
+    <Build Include="cls\Stored Procedures\Classifier_GetAll.sql" />
+    <Build Include="cp\Stored Procedures\User2FA_Delete.sql" />
+    <Build Include="cp\Stored Procedures\CmGroup_GetMany.sql" />
+    <Build Include="cp\Stored Procedures\AccountWallet_Change.sql" />
+    <Build Include="sms\Stored Procedures\SurveyResponse_UpdateSurveyStats.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GainAndLossCalc.sql" />
+    <Build Include="ext\Stored Procedures\job_ReportForRedmartBySmsTemplates.sql" />
+    <Build Include="cp\Stored Procedures\UserAccess_RoleGet.sql" />
+    <Build Include="map\Stored Procedures\MNO_Operator_GetByCountry.sql" />
+    <Build Include="cp\Stored Procedures\CmFile_GetManyByAccount.sql" />
+    <Build Include="cp\Stored Procedures\User2FA_Get.sql" />
+    <Build Include="dbo\Stored Procedures\sp_findCustomerOutOfCredit_Deprecated.sql" />
+    <Build Include="cp\Stored Procedures\Survey_GetAll.sql" />
+    <Build Include="ipm\Stored Procedures\ChannelFallback_Add.sql" />
+    <Build Include="cp\Stored Procedures\UserSubAccount_Add.sql" />
+    <Build Include="cls\Stored Procedures\ClassificationRule_Get.sql" />
+    <Build Include="sms\Stored Procedures\IpmLog_GetStatus.sql" />
+    <Build Include="cp\Stored Procedures\CmSmsTemplate_Save.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="cp\Stored Procedures\User2FA_Update.sql" />
+    <Build Include="ms\Stored Procedures\AccountBalanceAlert_Reset.sql" />
+    <Build Include="ipm\Stored Procedures\ChannelFallback_Delete.sql" />
+    <Build Include="cp\Stored Procedures\UserSubAccount_Remove.sql" />
+    <Build Include="map\Stored Procedures\PricingPlan_Delete.sql" />
+    <Build Include="cp\Stored Procedures\CmFile_GetOne.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetRecordByCorrelationIdSource.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ms\Stored Procedures\AccountWallet_Charge.sql" />
+    <Build Include="smsapi\Stored Procedures\Survey_GetAll.sql" />
+    <Build Include="optimus\Stored Procedures\SenderRotationPoolList_GetAll.sql" />
+    <Build Include="ipm\Stored Procedures\ChannelFallback_Get.sql" />
+    <Build Include="cp\Stored Procedures\UserRole_Get.sql" />
+    <Build Include="cls\Stored Procedures\ClassificationPatternDefault_Get.sql" />
+    <Build Include="cp\Stored Procedures\CmSmsTemplate_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetCustomerConnectionParameters.sql" />
+    <Build Include="ms\Stored Procedures\AccountWallet_IsPositive.sql" />
+    <Build Include="smsapi\Stored Procedures\Survey_SaveBatch.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateSelectCostSessionData.sql" />
+    <Build Include="ipm\Stored Procedures\ChannelFallback_Update.sql" />
+    <Build Include="cp\Stored Procedures\User_UpdateSiteVersion.sql" />
+    <Build Include="cp\Stored Procedures\CmSenderIdSuggestion_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetClusterConfig.sql" />
+    <Build Include="ms\Stored Procedures\CurrencyRate_GetAll.sql" />
+    <Build Include="smsapi\Stored Procedures\Accounts_GetAll.sql" />
+    <Build Include="ms\Stored Procedures\SubAccount_Add.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetCarrierByFeature.sql" />
+    <Build Include="cls\Stored Procedures\ClassificationPattern_Get.sql" />
+    <Build Include="cp\Stored Procedures\CmSenderIdSuggestion_Save.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetCarrierConnectionParameters.sql" />
+    <Build Include="ms\Stored Procedures\QueueConfig_MtIn.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateFormula.sql" />
+    <Build Include="cp\Stored Procedures\AccountBilling_AttachPayment.sql" />
+    <Build Include="map\Stored Procedures\RoutingManager_View.sql" />
+    <Build Include="cp\Stored Procedures\UserList_GetByAccount_v3.sql" />
+    <Build Include="map\Stored Procedures\Pricing_GetPricingBySubAccount.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetApplicationSettings.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\usp_InsertFormula.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetReportByCountry.sql" />
+    <Build Include="cp\Stored Procedures\AccountBilling_GetTokens.sql" />
+    <Build Include="cls\Stored Procedures\Job_HardDeleteOfRecords.sql" />
+    <Build Include="sms\Stored Procedures\GDPR_MsisdnAnonymise.sql" />
+    <Build Include="map\Stored Procedures\CPUser_GetEmailsBySubAccount.sql" />
+    <Build Include="dbo\Stored Procedures\sp_getAllCredit.sql" />
+    <Build Include="costprov\Stored Procedures\EmailParser_GetByEmail.sql" />
+    <Build Include="cp\Stored Procedures\BillingTransaction_Add.sql" />
+    <Build Include="cp\Stored Procedures\CmCampaign_GetPriceRange.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAccountMTConfig.sql" />
+    <Build Include="costprov\Stored Procedures\RouteLookup_ByParserIdRouteKeyword.sql" />
+    <Build Include="dbo\Stored Procedures\usp_DailyBackup_PlanRouting.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetReportByCarrier.sql" />
+    <Build Include="cp\Stored Procedures\BillingTransaction_GetMany.sql" />
+    <Build Include="mno\Stored Procedures\job_CurrencyRate_Validate.sql" />
+    <Build Include="map\Stored Procedures\Pricing_GetLastChanges.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAccountMODRConfig.sql" />
+    <Build Include="costprov\Stored Procedures\ParseRow_Default.sql" />
+    <Build Include="cp\Stored Procedures\Account_Rename_Ops.sql" />
+    <Build Include="cp\Stored Procedures\BillingTransaction_UpdateExtStatus.sql" />
+    <Build Include="rt\Stored Procedures\job_SupplierCostCoverage_ApplyScheduledCostChange.sql" />
+    <Build Include="map\Stored Procedures\User_Create.sql" />
+    <Build Include="dbo\Stored Procedures\sp_web_SearchTrafficRecordBySubAccountIdDestination.sql" />
+    <Build Include="ms\Stored Procedures\CustomerRouting_GetAll.sql" />
+    <Build Include="costprov\Stored Procedures\ProcessPacket_GetDiffWithFullCostList.sql" />
+    <Build Include="cp\Stored Procedures\ChatApps_FilterLogs.sql" />
+    <Build Include="sms\Stored Procedures\job_SmsLog_CheckStats.sql" />
+    <Build Include="ms\Stored Procedures\DbDependency_DataChanged.sql" />
+    <Build Include="ms\Stored Procedures\CustomerConnections_GetAll.sql" />
+    <Build Include="cp\Stored Procedures\BillingTransaction_IsReviewNeeded.sql" />
+    <Build Include="map\Stored Procedures\User_GetByEmail.sql" />
+    <Build Include="rt\Stored Procedures\RoutingTier_UpdateDependencies.sql" />
+    <Build Include="dbo\Stored Procedures\sp_web_GetWebInterface.sql" />
+    <Build Include="cp\Stored Procedures\ChatApps_ReportStatistics.sql" />
+    <Build Include="ms\Stored Procedures\DbDependency_GetLastUpdate.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ms\Stored Procedures\CustomerConnectionParams_GetAll.sql" />
+    <Build Include="cp\Stored Procedures\CmCampaign_UpdateStatus.sql" />
+    <Build Include="ipm\Stored Procedures\WhatsAppMedia_Get.sql" />
+    <Build Include="map\Stored Procedures\User_GetByUserId.sql" />
+    <Build Include="rt\Stored Procedures\Argus_AutoRoutingSwitcher_DRAFT.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateServiceTotal.sql" />
+    <Build Include="dbo\Stored Procedures\sp_SearchMessagebyOpid.sql" />
+    <Build Include="cp\Stored Procedures\CmSmsTemplate_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="cp\Stored Procedures\Report_SmsTraffic.sql" />
+    <Build Include="mno\Stored Procedures\CurrencyPair_GetAll.sql" />
+    <Build Include="map\Stored Procedures\User_UpdateByUserId.sql" />
+    <Build Include="ms\Stored Procedures\FeatureFilter_RedactApi_GetAll.sql" />
+    <Build Include="ms\Stored Procedures\QueueConfig_DrOutConsume.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateRecordStatusCIdBySubAccountIdUmid.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetAvgPriceByMSISDN.sql" />
+    <Build Include="cp\Stored Procedures\CmSenderIdSuggestion_Add.sql" />
+    <Build Include="cp\Stored Procedures\CmSmsTemplate_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="cp\Stored Procedures\Pricing_GetList.sql" />
+    <Build Include="mno\Stored Procedures\CurrencyRate_CheckMissing.sql" />
+    <Build Include="map\Stored Procedures\User_UpdatePassword.sql" />
+    <Build Include="ms\Stored Procedures\job_HardDeleteOfRecords.sql" />
+    <Build Include="ms\Stored Procedures\QueueConfig_DrInConsume.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateRecordStatusBySubAccountIdUmid.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetWebsenderHistory.sql" />
+    <Build Include="cp\Stored Procedures\CmSmsTemplate_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\usp_UpdateCredit.sql" />
+    <Build Include="cp\Stored Procedures\job_VolumeQuickStats_Calculate.sql" />
+    <Build Include="map\Stored Procedures\User_ResetPassword_Request.sql" />
+    <Build Include="dbo\Stored Procedures\sp_report_messages_NewTotalBySubAccountIdGroupByTariff.sql" />
+    <Build Include="ms\Stored Procedures\DbDependency_Subscribe.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CheckAccountCredit.sql" />
+    <Build Include="map\Stored Procedures\User_ResetPassword_Update.sql" />
+    <Build Include="dbo\Stored Procedures\sp_report_messages_NewTotalBySubAccountIdGroupByStatus.sql" />
+    <Build Include="cp\Stored Procedures\FreeCreditCountry_GetAll.sql" />
+    <Build Include="cp\Stored Procedures\SmsLog_GetOne.sql" />
+    <Build Include="map\Stored Procedures\User_ResetPassword_Validate.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetRecordByRouteIdCorrelationId.sql" />
+    <Build Include="dbo\Stored Procedures\sp_report_messages_NewTotalBySubAccountIdGroupByBody.sql" />
+    <Build Include="ms\Stored Procedures\MSISDNWhitelist_GetAll.sql" />
+    <Build Include="ipm\Stored Procedures\FacebookUserMatching_GetAll.sql" />
+    <Build Include="cp\Stored Procedures\SmsLog_GetManyByFilter.sql" />
+    <Build Include="cp\Stored Procedures\CmCampaign_Create.sql" />
+    <Build Include="dbo\Stored Procedures\sp_RemoveScheduledMessageByUmid.sql" />
+    <Build Include="dbo\Stored Procedures\usp_getRoutesByPrefixAndAccount.sql" />
+    <Build Include="sms\Stored Procedures\SmsLog_DWHExport.sql" />
+    <Build Include="dbo\Stored Procedures\usp_ComputeServiceTotal.sql" />
+    <Build Include="cp\Stored Procedures\BillingBalance_Get.sql" />
+    <Build Include="cp\Stored Procedures\CmCampaign_AddBatchId.sql" />
+    <Build Include="dbo\Stored Procedures\sp_KeepAlive.sql" />
+    <Build Include="ipm\Stored Procedures\FacebookUserMatching_AddUser.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetJobs.sql" />
+    <Build Include="cp\Stored Procedures\UiActivity_Create.sql" />
+    <Build Include="cp\Stored Procedures\CmCampaign_GetSubAccounts.sql" />
+    <Build Include="sms\Stored Procedures\ETL_Reprocess_GetListToReprocess.sql" />
+    <Build Include="map\Stored Procedures\Account_Delete.sql" />
+    <Build Include="ms\Stored Procedures\QueueConfig_Ipm.sql" />
+    <Build Include="optimus\Stored Procedures\DbDependency_GetChanges.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetTrafficReportAccount.sql" />
+    <Build Include="cp\Stored Procedures\UiActivity_GetMany.sql" />
+    <Build Include="sms\Stored Procedures\ETL_Reprocess_SetMessagesStatus.sql" />
+    <Build Include="ms\Stored Procedures\SubAccount_GetAll.sql" />
+    <Build Include="sms\Stored Procedures\IpmLog_Get.sql" />
+    <Build Include="dbo\Stored Procedures\sp_Customer_Daily_Traffic_Report.sql" />
+    <Build Include="cp\Stored Procedures\Pricing_GetCountries.sql" />
+    <Build Include="cp\Stored Procedures\CmCampaign_Update.sql" />
+    <Build Include="sms\Stored Procedures\IpmLog_Redact_Message.sql" />
+    <Build Include="cp\Stored Procedures\Report_SmsTraffic_OperatorsSummary_v2.sql" />
+    <Build Include="map\Stored Procedures\ChangeEvent_Insert.sql" />
+    <Build Include="ms\Stored Procedures\TrafficRecord_GetForDR.sql" />
+    <Build Include="sms\Stored Procedures\job_CacheUpdate_SubaccountCountry.sql" />
+    <Build Include="cp\Stored Procedures\CmCampaign_GetMany.sql" />
+    <Build Include="sms\Stored Procedures\SmsLog_Redact_Message.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertCarrier.sql" />
+    <Build Include="cp\Stored Procedures\job_Campaign_Cancelled.sql" />
+    <Build Include="cp\Stored Procedures\AuthApi_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="optimus\Stored Procedures\DbDependency_CacheCleared.sql" />
+    <Build Include="smsapi\Stored Procedures\AuthApi_IPWhitelist.sql" />
+    <Build Include="map\Stored Procedures\ChangeEvent_GetList.sql" />
+    <Build Include="ms\Stored Procedures\AccountProductMeta_Ops_Set.sql" />
+    <Build Include="cp\Stored Procedures\UiNews_GetMany.sql" />
+    <Build Include="dbo\Stored Procedures\sp_uploadScheduledMessage.sql" />
+    <Build Include="cp\Stored Procedures\CmContact_GetUniqueForGroups.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\sp_GetServerFromCluster.sql" />
+    <Build Include="dbo\Stored Procedures\AccountCredential_GetAll.sql" />
+    <Build Include="cp\Stored Procedures\Report_SmsTraffic_GetCountries.sql" />
+    <Build Include="map\Stored Procedures\IAM_UserActionsGet.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\sp_GetScheduledMessages.sql" />
+    <Build Include="cp\Stored Procedures\User_UpdateByUserId.sql" />
+    <Build Include="cp\Stored Procedures\Report_SmsTraffic_v2.sql" />
+    <Build Include="dbo\Stored Procedures\SubAccount_Default.sql" />
+    <Build Include="cp\Stored Procedures\Report_SmsTraffic_GetOperators.sql" />
+    <Build Include="smsapi\Stored Procedures\AuthApi_GetApiKeys.sql" />
+    <Build Include="ms\Stored Procedures\SMSPricing_Get.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetRecordBySubAccountIdUmid.sql" />
+    <Build Include="cp\Stored Procedures\TimeZone_GetAll.sql" />
+    <Build Include="cp\Stored Procedures\Pricing_GetList_v2.sql" />
+    <Build Include="dbo\Stored Procedures\SubAccount_Active.sql" />
+    <Build Include="map\Stored Procedures\ChangeEvent_GetDetail.sql" />
+    <Build Include="cp\Stored Procedures\ReportTemplate_UpdatebyId.sql" />
+    <Build Include="cp\Stored Procedures\job_HardDeleteOfRecords.sql" />
+    <Build Include="cp\Stored Procedures\TimeZone_GetById.sql" />
+    <Build Include="cp\Stored Procedures\SmsLog_CampaignDownload_v2.sql" />
+    <Build Include="cp\Stored Procedures\ReportTemplate_DeletebyId.sql" />
+    <Build Include="sms\Stored Procedures\UrlShorten_Add.sql" />
+    <Build Include="dbo\Stored Procedures\sp_ChargeAccount_Deprecated.sql" />
+    <Build Include="cp\Stored Procedures\Account_GetByUserId.sql" />
+    <Build Include="cp\Stored Procedures\SmsLog_GetManyByFilter_v2.sql" />
+    <Build Include="ms\Stored Procedures\FeatureFilter_Classifier_GetAll.sql" />
+    <Build Include="cp\Stored Procedures\ReportTemplate_GetAll.sql" />
+    <Build Include="sms\Stored Procedures\UrlShorten_GetByUrlId.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AuthenticateAdministrator.sql" />
+    <Build Include="cp\Stored Procedures\Account_UpdateByUserId.sql" />
+    <Build Include="cp\Stored Procedures\SmsLog_LogDownload_v2.sql" />
+    <Build Include="ms\Stored Procedures\CustomerWebhook_GetAll.sql" />
+    <Build Include="cp\Stored Procedures\SubAccount_GetAllByAccount.sql" />
+    <Build Include="cp\Stored Procedures\CmSenderId_GetBlacklist.sql" />
+    <Build Include="cp\Stored Procedures\AccountWallet_Ops_AlignCurrency.sql" />
+    <Build Include="cp\Stored Procedures\AuthApi_GetByAccountId.sql" />
+    <Build Include="cp\Stored Procedures\SmsLog_LogDownload.sql" />
+    <Build Include="cp\Stored Procedures\UserOnboarding_GetByUserId.sql" />
+    <Build Include="ms\Stored Procedures\UrlShorten_GetSettings.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="sms\Stored Procedures\job_SmsLog_CalculateSenderStats.sql" />
+    <Build Include="cp\Stored Procedures\AuthApi_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Customer_EmailId_For_Report.sql" />
+    <Build Include="cp\Stored Procedures\UserOnboarding_Update.sql" />
+    <Build Include="ms\Stored Procedures\CustomerWebhook_Add.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetDefaultSubAccountId.sql" />
+    <Build Include="cp\Stored Procedures\AuthApi_Update.sql" />
+    <Build Include="map\Stored Procedures\Currency_GetRates.sql" />
+    <Build Include="cp\Stored Procedures\Report_SmsTraffic_OperatorsSummary.sql" />
+    <Build Include="cp\Stored Procedures\CmContact_GetManyByGrouplist.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\sp_DeleteAccount.sql" />
+    <Build Include="cp\Stored Procedures\User_ResetPassword_Request.sql" />
+    <Build Include="cp\Stored Procedures\User_UpdatePhoneByUserId.sql" />
+    <Build Include="dbo\Stored Procedures\sp_SearchMessageByUmid.sql" />
+    <Build Include="cp\Stored Procedures\CmContact_GetTotalsByGrouplist.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AddNewAccount.sql" />
+    <Build Include="cp\Stored Procedures\User_ResetPassword_Validate.sql" />
+    <Build Include="cp\Stored Procedures\Billing_AddCredits.sql" />
+    <Build Include="dbo\Stored Procedures\sp_SearchMessageSimple.sql" />
+    <Build Include="cp\Stored Procedures\CmFile_Insert.sql" />
+    <Build Include="ms\Stored Procedures\ApplicationSettings_GetByHost.sql" />
+    <Build Include="dbo\Stored Procedures\sp_ActivateAccountFromUser.sql" />
+    <Build Include="cp\Stored Procedures\User_ResetPassword_Update.sql" />
+    <Build Include="cp\Stored Procedures\Account_FreeCreditsTopup.sql" />
+    <Build Include="cp\Stored Procedures\CmFile_Update.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetRouteIdByAccount.sql" />
+    <Build Include="cp\Stored Procedures\User_GetByLogin.sql" />
+    <Build Include="mno\Stored Procedures\CurrencyRate_Set.sql" />
+    <Build Include="cp\Stored Procedures\ApiWebhook_GetByAccount.sql" />
+    <Build Include="dbo\Stored Procedures\sp_getMessageProtocolSource.sql" />
+    <Build Include="ms\Stored Procedures\CustomerWebhook_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAccountDefinitions.sql" />
+    <Build Include="morph\Stored Procedures\KannelStatusUrl_Get.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetCountryAndCode.sql" />
+    <Build Include="ms\Stored Procedures\CustomerWebhook_Get.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAccountBySubAccount.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Print_RowCount.sql" />
+    <Build Include="cp\Stored Procedures\AuthApi_GetByApiKey.sql" />
+    <Build Include="cp\Stored Procedures\CmCampaign_GetApprovalProcessing.sql" />
+    <Build Include="cp\Stored Procedures\CmSenderIdBlacklist_GetAll.sql" />
+    <Build Include="ms\Stored Procedures\CustomerWebhook_Update.sql" />
+    <Build Include="dbo\Stored Procedures\job_PlanRoutingFor_GlobalPricing_Update.sql" />
+    <Build Include="dbo\Stored Procedures\sp_NumberOfMessageByHour.sql" />
+    <Build Include="cp\Stored Procedures\CmCampaign_GetOne.sql" />
+    <Build Include="sap\Stored Procedures\Netsuite_SmsUsage_Export.sql" />
+    <Build Include="rt\Stored Procedures\SupplierCostCoverage_LoadAll.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetPriceChangeAlertAccount.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetOpMccMnc.sql" />
+    <Build Include="dbo\Stored Procedures\sp_getSubAccountIdFromAccount.sql" />
+    <Build Include="sap\Stored Procedures\SmsLog_ExportTail_v2.sql" />
+    <Build Include="cp\Stored Procedures\AccountSSOConfig_Create.sql" />
+    <Build Include="rt\Stored Procedures\RoutingCustom_LoadAll.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Customer_PriceChange_Alert.sql" />
+    <Build Include="cp\Stored Procedures\UrlShorten_GetReport_Deprecated.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetReportByCarrierDetails_v1.sql" />
+    <Build Include="sap\Stored Procedures\Account_ExportTail_v2.sql" />
+    <Build Include="cp\Stored Procedures\AccountSSOConfig_Get.sql" />
+    <Build Include="rt\Stored Procedures\RoutingPlan_LoadAll.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Customer_EmailId_For_PriceChange_Alert.sql" />
+    <Build Include="cp\Stored Procedures\SmsReportExportConfig_Create.sql" />
+    <Build Include="cp\Stored Procedures\UrlShorten_ExportLog_Deprecated.sql" />
+    <Build Include="gtn\Stored Procedures\CSG_Log_GetByOperatorIdRouteId.sql" />
+    <Build Include="map\Stored Procedures\SubAccount_Create.sql" />
+    <Build Include="dbo\Stored Procedures\sp_StatsTotalByMTAndCountry.sql" />
+    <Build Include="cp\Stored Procedures\AccountSSOConfig_Update.sql" />
+    <Build Include="rt\Stored Procedures\RoutingPlanCoverage_LoadAll.sql" />
+    <Build Include="cp\Stored Procedures\SmsReportExportConfig_Delete.sql" />
+    <Build Include="gtn\Stored Procedures\CSG_Log_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetRouteList.sql" />
+    <Build Include="cp\Stored Procedures\BillingTopupMin_GetAll.sql" />
+    <Build Include="rt\Stored Procedures\PricingPlan_LoadAll.sql" />
+    <Build Include="ms\Stored Procedures\ScheduledMessages_Schedule.sql" />
+    <Build Include="cp\Stored Procedures\SmsReportExportConfig_GetByAccountUserId.sql" />
+    <Build Include="gtn\Stored Procedures\CSG_TestBatch_GetParams_v2.sql" />
+    <Build Include="map\Stored Procedures\Account_SubAccount_GetUser.sql" />
+    <Build Include="ms\Stored Procedures\AccountMOConfig_GetAll.sql" />
+    <Build Include="cp\Stored Procedures\CmCampaignSummary_Get.sql" />
+    <Build Include="map\Stored Procedures\RoutingPlanCoverage_GetById.sql" />
+    <Build Include="ms\Stored Procedures\ScheduledMessages_GetForProcessing.sql" />
+    <Build Include="cp\Stored Procedures\SmsReportExportConfig_GetByRunDate.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroupSubAccount_UpdateUpdatedAt_NotInUse.sql" />
+    <Build Include="gtn\Stored Procedures\CSG_TestCase_GetAll.sql" />
+    <Build Include="ipm\Stored Procedures\Channel_SetWebhookSubAccount.sql" />
+    <Build Include="rt\Stored Procedures\PricingPlanCoverage_LoadAll.sql" />
+    <Build Include="ms\Stored Procedures\ScheduledMessages_RemoveByUmid.sql" />
+    <Build Include="cp\Stored Procedures\SmsReportExportConfig_Update.sql" />
+    <Build Include="gtn\Stored Procedures\CSG_TestRoute_GetAll.sql" />
+    <Build Include="map\Stored Procedures\Account_UpdateActiveStatus.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroup_GetList.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="map\Stored Procedures\RoutingPlan_DeleteByCountry.sql" />
+    <Build Include="map\Stored Procedures\Pricing_GetPricingBySubAccount_v3.sql" />
+    <Build Include="rt\Stored Procedures\RoutingGroup_LoadAll.sql" />
+    <Build Include="ms\Stored Procedures\MSISDNBlacklist_GetAll.sql" />
+    <Build Include="ms\Stored Procedures\ScheduledMessages_RemoveByBatchId.sql" />
+    <Build Include="gtn\Stored Procedures\CSG_TestRoute_Update.sql" />
+    <Build Include="cp\Stored Procedures\CmCampaign_GetSurveyResponses.sql" />
+    <Build Include="map\Stored Procedures\RoutingPlanCoverage_GetCustomerGroupDependency.sql" />
+    <Build Include="ms\Stored Procedures\SubAccount_Create_Internal.sql" />
+    <Build Include="rt\Stored Procedures\SupplierConn_LoadAll.sql" />
+    <Build Include="ms\Stored Procedures\Customer_Emails_For_Balance_Alert_GetAll.sql" />
+    <Build Include="morph\Stored Procedures\job_SyncRoutingFromMS.sql" />
+    <Build Include="map\Stored Procedures\SubAccount_Get.sql" />
+    <Build Include="sms\Stored Procedures\UrlShorten_UpdateCampaignStats.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="rt\Stored Procedures\RoutingCoverageConditionStatus_LoadAll.sql" />
+    <Build Include="sms\Stored Procedures\SurveyResponse_UpdateCampaignStats.sql" />
+    <Build Include="ms\Stored Procedures\SubAccount_SetupBasics_Internal.sql" />
+    <Build Include="cp\Stored Procedures\User_CreateByInvite.sql" />
+    <Build Include="sms\Stored Procedures\SurveyResponse_Save.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="sms\Stored Procedures\DlrLog_DWHExport.sql" />
+    <Build Include="rt\Stored Procedures\RoutingGroupTier_LoadAll.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroup_SubAccount_Add.sql" />
+    <Build Include="ipm\Stored Procedures\Channel_GetAll.sql" />
+    <Build Include="ms\Stored Procedures\SubAccount_Ops_SetAsset.sql" />
+    <Build Include="sms\Stored Procedures\SmsLog_GetForApi.sql" />
+    <Build Include="rt\Stored Procedures\RoutingTier_LoadAll.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroup_SubAccount_Delete.sql" />
+    <Build Include="ipm\Stored Procedures\Channel_Add.sql" />
+    <Build Include="ms\Stored Procedures\job_CustomerWebhook_MergeFromV1.sql" />
+    <Build Include="ms\Stored Procedures\SubAccount_SetupBasics_ChatApps.sql" />
+    <Build Include="rt\Stored Procedures\RoutingTierConn_LoadAll.sql" />
+    <Build Include="ipm\Stored Procedures\Channel_Get.sql" />
+    <Build Include="ms\Stored Procedures\SubAccount_SetupBasics_SMS.sql" />
+    <Build Include="cp\Stored Procedures\User_Block.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetLowestcost.sql" />
+    <Build Include="ipm\Stored Procedures\Channel_Update.sql" />
+    <Build Include="cp\Stored Procedures\User_Unblock.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetRoutesForOpid_from_costTable.sql" />
+    <Build Include="ipm\Stored Procedures\Channel_UpdateServiceInfo.sql" />
+    <Build Include="rt\Stored Procedures\SupplierConn_UpdateConnectionStatus.sql" />
+    <Build Include="dbo\Stored Procedures\sp_StatsMessages.sql" />
+    <Build Include="optimus\Stored Procedures\job_ChinaUnicom_DeactivateBadSenderIds.sql" />
+    <Build Include="cp\Stored Procedures\User_UpdateAccessLevel.sql" />
+    <Build Include="sms\Stored Procedures\job_SmsLogConnMessageId_DeleteOldRecords.sql" />
+    <Build Include="dbo\Stored Procedures\sp_SearchMessage.sql" />
+    <Build Include="ms\Stored Procedures\QueueConfig_Consuming.sql" />
+    <Build Include="dbo\Stored Procedures\job_MessageStats_AlertDataErrors.sql" />
+    <Build Include="dbo\Stored Procedures\sp_StatsMessagesByCountry.sql" />
+    <Build Include="ms\Stored Procedures\FeatureFilter_SessionMessage_GetAll.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroupCoverage_GetById_v2.sql" />
+    <Build Include="rt\Stored Procedures\job_UpdatePriceAndCostInEUR.sql" />
+    <Build Include="dbo\Stored Procedures\sp_StatsMessagesMOMTRatio.sql" />
+    <Build Include="ms\Stored Procedures\job_QueueConfig_ReconfigureTOPcustomers.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroupCoverage_Insert_v2.sql" />
+    <Build Include="sms\Stored Procedures\job_SmsLog_ExpiredDR.sql" />
+    <Build Include="cp\Stored Procedures\UserList_AdminsOnly.sql" />
+    <Build Include="ms\Stored Procedures\SupplierCostCoverageSID_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetCPStandardFormula.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroupCoverage_Update_v2.sql" />
+    <Build Include="cp\Stored Procedures\User_CheckPermissions.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateCostSessionData.sql" />
+    <Build Include="ms\Stored Procedures\WebhookTokenCfg_InsertOne.sql" />
+    <Build Include="ms\Stored Procedures\job_AccountMeta_AutoCompute.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateRecordStatusandErrorcodeBySubAccountIdUmid.sql" />
+    <Build Include="cp\Stored Procedures\User_Delete.sql" />
+    <Build Include="cp\Stored Procedures\BillingAutoTopup_Add.sql" />
+    <Build Include="smsapi\Stored Procedures\AuthApi_GetCredentials.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateProposedPriceCostRoute.sql" />
+    <Build Include="map\Stored Procedures\Pricing_GetPricingBySubAccount_v2.sql" />
+    <Build Include="cp\Stored Procedures\SmsLog_UrlShortenDownload.sql" />
+    <Build Include="cp\Stored Procedures\Report_UrlShorten.sql" />
+    <Build Include="dbo\Stored Procedures\sp_getOperatorFromPhoneNumber.sql" />
+    <Build Include="map\Stored Procedures\SubAccount_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\sp_StatsMessagesStatus.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetUserDetails.sql" />
+    <Build Include="map\Stored Procedures\PricingPlanCoverage_UpdateById.sql" />
+    <Build Include="cp\Stored Procedures\BillingAutoTopup_Get.sql" />
+    <Build Include="sms\Stored Procedures\job_SmsLog_CalculateStats_v1.sql" />
+    <Build Include="cp\Stored Procedures\Report_UrlShorten_Data.sql" />
+    <Build Include="ext\Stored Procedures\job_ReportForLazadaBySmsTemplates.sql" />
+    <Build Include="ms\Stored Procedures\WebhookTokenCfg_GetAll.sql" />
+    <Build Include="map\Stored Procedures\PricingPlanCoverage_DeleteById.sql" />
+    <Build Include="cp\Stored Procedures\BillingAutoTopup_Delete.sql" />
+    <Build Include="sms\Stored Procedures\job_SmsLog_CalculateStats_v2.sql" />
+    <Build Include="sms\Stored Procedures\job_SmsLog_DeleteOldRecords.sql" />
+    <Build Include="dbo\Stored Procedures\usp_getAccountCredit.sql" />
+    <Build Include="map\Stored Procedures\PricingPlanCoverage_Insert.sql" />
+    <Build Include="cp\Stored Procedures\BillingAutoTopup_Update.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetCPopCostDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sp_configurationChanged.sql" />
+    <Build Include="rt\Stored Procedures\SubAccount_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\job_AccountCredit_DoSnapshot.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateProvisioingCost.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SelectCostSessionData.sql" />
+    <Build Include="dbo\Stored Procedures\sp_configurationReloaded.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateBalanceAlert.sql" />
+    <Build Include="rt\Stored Procedures\job_SyncRoutingFromv1.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateCPStandardFormula.sql" />
+    <Build Include="ipm\Stored Procedures\WhatsAppMedia_Insert.sql" />
+    <Build Include="ms\Stored Procedures\SmsLog_Feedback.sql" />
+    <Build Include="map\Stored Procedures\User_GetAllForRouting.sql" />
+    <Build Include="dbo\Stored Procedures\usp_ApplyProposedRouting.sql" />
+    <Build Include="ms\Stored Procedures\SupplierConn_GetAll.sql" />
+    <Build Include="ipm\Stored Procedures\WhatsAppMedia_Delete.sql" />
+    <Build Include="rt\Stored Procedures\Route_GetAll.sql" />
+    <Build Include="cp\Stored Procedures\BillingTransaction_UpdateByReview.sql" />
+    <Build Include="ipm\Stored Procedures\WhatsAppMedia_GetForProcessing.sql" />
+    <Build Include="rt\Stored Procedures\RouteCustomer_GetDataByFilter_Basics.sql" />
+    <Build Include="map\Stored Procedures\PricingPlan_GetList.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetLowestcost1.sql" />
+    <Build Include="ipm\Stored Procedures\WeChatUserMatching_GetAll.sql" />
+    <Build Include="rt\Stored Procedures\RouteCustomer_GetDataByFilter.sql" />
+    <Build Include="dbo\Stored Procedures\sp_NumberOfMessageByDay.sql" />
+    <Build Include="ms\Stored Procedures\DlrToProcess_Delete.sql" />
+    <Build Include="rt\Stored Procedures\RouteCustomer_GetDataByFilter_ForEmail.sql" />
+    <Build Include="cp\Stored Procedures\UserList_GetByAccount.sql" />
+    <Build Include="rt\Stored Procedures\RouteOperator_GetDataByCountry.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetBestFixedRoutecost.sql" />
+    <Build Include="map\Stored Procedures\PricingPlanCoverage_GetById.sql" />
+    <Build Include="ms\Stored Procedures\BillingAutoTopup_Check.sql" />
+    <Build Include="rt\Stored Procedures\RouteOperator_Update.sql" />
+    <Build Include="cp\Stored Procedures\AccountSSOConfig_Delete.sql" />
+    <Build Include="map\Stored Procedures\MNO_Country_GetAll.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ms\Stored Procedures\SmsLog_InsertMT.sql" />
+    <Build Include="ipm\Stored Procedures\Channel_Ops_RegisterChatAppsSandbox.sql" />
+    <Build Include="ms\Stored Procedures\SubAccount_Get.sql" />
+    <Build Include="rt\Stored Procedures\Setting_GetSchema.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="ms\Stored Procedures\AuthSmpp_GetAll.sql" />
+    <Build Include="sap\Stored Procedures\SmsLog_ExportTail.sql" />
+    <Build Include="cp\Stored Procedures\CmContact_GetManyByMSISDNs.sql" />
+    <Build Include="ms\Stored Procedures\RateLimits_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\sp_SearchMO.sql" />
+    <Build Include="map\Stored Procedures\MNO_Operator_GetAll.sql" />
+    <Build Include="ms\Stored Procedures\SmsLog_InsertMO.sql" />
+    <Build Include="sap\Stored Procedures\Account_ExportTail.sql" />
+    <Build Include="dbo\Stored Procedures\usp_ConfigureStandardRoutingMode.sql" />
+    <Build Include="rt\Stored Procedures\SubAccountForbiddenConn_LoadAll.sql" />
+    <Build Include="rt\Stored Procedures\Operator_GetAll.sql" />
+    <Build Include="ms\Stored Procedures\UrlShortenBlacklist_GetAll.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="sms\Stored Procedures\IpmLog_GetForApi.sql" />
+    <Build Include="map\Stored Procedures\RoutingPlan_GetList.sql" />
+    <Build Include="smsapi\Stored Procedures\SmsLogExportSettings_GetAll.sql" />
+    <Build Include="rt\Stored Procedures\Country_UpdateJson.sql" />
+    <Build Include="dbo\Stored Procedures\sp_SearchTrafficRecord.sql" />
+    <Build Include="sms\Stored Procedures\SmsLog_GetForSubAccount.sql" />
+    <Build Include="ms\Stored Procedures\AuthApi_LoadApiKeyVoice.sql" />
+    <Build Include="ms\Stored Procedures\DlrToProcess_GetForProcessing.sql" />
+    <Build Include="rt\Stored Procedures\Country_GetByISOCode.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetBestcost.sql" />
+    <Build Include="ms\Stored Procedures\DlrToProcess_Reset.sql" />
+    <Build Include="cp\Stored Procedures\SecurityEventLog_Insert.sql" />
+    <Build Include="map\Stored Procedures\CPUser_FindByKeyword.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="rt\Stored Procedures\Country_GetAll.sql" />
+    <Build Include="ms\Stored Procedures\TrafficErrorCode_GetAll.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\usp_CommitCostPricetoRouting.sql" />
+    <Build Include="rt\Stored Procedures\Account_GetEmailsBySubAccount.sql" />
+    <Build Include="dbo\Stored Procedures\sp_StatsMessagesByDay.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateProvisioingCost1.sql" />
+    <Build Include="ms\Stored Procedures\InboundCostCoverage_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetRoutesForOpid.sql" />
+    <Build Include="rt\Stored Procedures\Account_GetAll.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\usp_GetCPStat_Details.sql" />
+    <Build Include="ms\Stored Procedures\FeatureFilter_AsyncDb_GetAll.sql" />
+    <Build Include="ms\Stored Procedures\InboundPriceCoverage_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\sp_StatsMessages2.sql" />
+    <Build Include="ms\Stored Procedures\FeatureFilter_Optimus_GetAll.sql" />
+    <Build Include="ms\Stored Procedures\VirtualNumberRental_GetAll.sql" />
+    <Build Include="rt\Stored Procedures\job_RoutingConsistency_Validate.sql" />
+    <Build Include="optimus\Stored Procedures\MessageBodyPrefixRules_GetAll.sql" />
+    <Build Include="mno\Stored Procedures\job_CurrencyRate_SetWavecell.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PreCommitCostRouteConfigure.sql" />
+    <Build Include="ms\Stored Procedures\QueueConfig_SmsWriteToDbConsume.sql" />
+    <Build Include="dbo\Stored Procedures\usp_InsertRouteSelData.sql" />
+    <Build Include="ms\Stored Procedures\SmsLog_GetForDR.sql" />
+    <Build Include="cp\Stored Procedures\InboundPriceCoverage_Get.sql" />
+    <Build Include="dbo\Stored Procedures\usp_getViewRoutingByFilter.sql" />
+    <Build Include="ms\Stored Procedures\SmsLog_Update.sql" />
+    <Build Include="dbo\Stored Procedures\usp_updateViewRoutingRow.sql" />
+    <Build Include="map\Stored Procedures\ChangeEventNote_Insert.sql" />
+    <Build Include="ms\Stored Procedures\FeatureFilter_SMSCDLR_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\sp_StatsMessagesByCountry-old.sql" />
+    <Build Include="rt\Stored Procedures\RouteCustomer_UpdateComment.sql" />
+    <Build Include="optimus\Stored Procedures\SenderMaskingRules_GetChanged.sql" />
+    <Build Include="ms\Stored Procedures\FeatureFilter_MNOLookup_GetAll.sql" />
+    <Build Include="ipm\Stored Procedures\WhatsAppConfig_GetManagementConfig.sql" />
+    <Build Include="mno\Stored Procedures\job_UpdateDataFromMessageSphere_v1.sql" />
+    <Build Include="dbo\Stored Procedures\usp_deleteViewRoutingRow.sql" />
+    <Build Include="sms\Stored Procedures\job_SmsLog_AddJob.sql" />
+    <Build Include="ipm\Stored Procedures\WhatsAppTemplate_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\usp_InsertStandardRoutingName.sql" />
+    <Build Include="cp\Stored Procedures\ChannelFallback_Get.sql" />
+    <Build Include="ms\Stored Procedures\SmsLog_UpdateCorrelationId.sql" />
+    <Build Include="sms\Stored Procedures\job_SmsLog_CalculateStats.sql" />
+    <Build Include="ipm\Stored Procedures\WhatsAppTemplate_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_GetWavecellErrorCode.sql" />
+    <Build Include="ms\Stored Procedures\SmsLog_UpdateMTStatus.sql" />
+    <Build Include="ipm\Stored Procedures\WhatsAppTemplate_Update.sql" />
+    <Build Include="sms\Stored Procedures\DlrToProcess_DeleteOne.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AlertAccount.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CalcTrafficDelivery.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetStandardFormula.sql" />
+    <Build Include="ipm\Stored Procedures\WhatsAppTemplateCategory_GetAll.sql" />
+    <Build Include="sms\Stored Procedures\DlrToProcess_GetBatchUnprocessed.sql" />
+    <Build Include="map\Stored Procedures\RoutingTierCondition_GetAllByTier.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetStandardVirtualAccountDetails.sql" />
+    <Build Include="ipm\Stored Procedures\WhatsAppTemplateLanguage_GetAll.sql" />
+    <Build Include="map\Stored Procedures\RoutingTierCondition_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AccountToBilled.sql" />
+    <Build Include="ms\Stored Procedures\GoogleVSMS_AccountAgent_GetAll.sql" />
+    <Build Include="ipm\Stored Procedures\WhatsAppTemplateStatus_GetAll.sql" />
+    <Build Include="ipm\Stored Procedures\PricingPlanChannel_GetAll.sql" />
+    <Build Include="map\Stored Procedures\RoutingTierCondition_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\sp_sumSpentFromAccountBetween.sql" />
+    <Build Include="ms\Stored Procedures\GoogleVSMS_Agent_Add.sql" />
+    <Build Include="ipm\Stored Procedures\WhatsAppTemplate_Get.sql" />
+    <Build Include="cp\Stored Procedures\Account_SubAccount_GetAll.sql" />
+    <Build Include="map\Stored Procedures\RoutingTierCondition_Update.sql" />
+    <Build Include="ms\Stored Procedures\GoogleVSMS_Agent_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetTrafficLogAccount.sql" />
+    <Build Include="dbo\Stored Procedures\usp_InsertAccountBalanceAlert.sql" />
+    <Build Include="ipm\Stored Procedures\WhatsAppTemplate_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CheckBalanceorOverdraftAlert.sql" />
+    <Build Include="optimus\Stored Procedures\MessageBodyPrefixMapping_GetBySubAccountIdOperatorId_Deprecated.sql" />
+    <Build Include="cp\Stored Procedures\job_Campaign_Delivered_Update.sql" />
+    <Build Include="morph\Stored Procedures\Routing_GetAll.sql" />
+    <Build Include="map\Stored Procedures\RoutingManager_ImpactView.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroup_SubAccount_Get.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Customer_EmailId_For_Balance_Alert.sql" />
+    <Build Include="optimus\Stored Procedures\SenderMaskingRules_GetAll.sql" />
+    <Build Include="morph\Stored Procedures\RoutingRule_GetAll.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\sp_SearchMessageByUmidAccountId.sql" />
+    <Build Include="map\Stored Procedures\RoutingTierCondition_SetParam.sql" />
+    <Build Include="map\Stored Procedures\RoutingPlan_GetListByCountry.sql" />
+    <Build Include="dbo\Stored Procedures\usp_UpdateAccountBalanceAlertFlags.sql" />
+    <Build Include="optimus\Stored Procedures\SenderMaskingRules_GetByOperatorRoute.sql" />
+    <Build Include="morph\Stored Procedures\SubAccount_GetMapping2Standards.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="map\Stored Procedures\RoutingManager_Reroute_ViewImpact.sql" />
+    <Build Include="dbo\Stored Procedures\sp_Customer_Daily_TrafficLog_Report.sql" />
+    <Build Include="map\Stored Procedures\PricingPlan_GetListByCountry.sql" />
+    <Build Include="optimus\Stored Procedures\SenderRotationPool_GetAll.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroupCoverage_GetCountries.sql" />
+    <Build Include="ms\Stored Procedures\FeatureFilter_PriceOnDelivery_GetAll.sql" />
+    <Build Include="optimus\Stored Procedures\SenderRotationPool_GetBySenderPoolId.sql" />
+    <Build Include="rt\Stored Procedures\job_UpdateFromMessageSphere_v1.sql" />
+    <Build Include="map\Stored Procedures\RoutingManager_Reroute_Update.sql" />
+    <Build Include="map\Stored Procedures\CustomerGroup_SubAccount_GetBySubAccountUid.sql" />
+    <Build Include="ms\Stored Procedures\FeatureFilter_CostOnDelivery_GetAll.sql" />
+    <Build Include="optimus\Stored Procedures\SenderRotationPoolList_GetById.sql" />
+    <Build Include="morph\Stored Procedures\RouteCost_GetAll.sql" />
+    <Build Include="dbo\User Defined Types\RouteOPCOSTType.sql" />
+    <Build Include="dbo\User Defined Types\DTCostsessionData.sql" />
+    <Build Include="dbo\User Defined Types\RouteOPCOSTTypenew.sql" />
+    <Build Include="Security\WhatsAppConfig.sql" />
+    <Build Include="Security\WebhookTokenCfg.sql" />
+    <Build Include="Security\ChatAppsConfig.sql" />
+    <Build Include="Security\AccountCertificate.sql" />
+    <Build Include="Security\GoogleVSMS.sql" />
+    <Build Include="Security\adm.sql" />
+    <Build Include="Security\cls.sql" />
+    <Build Include="Security\costprov.sql" />
+    <Build Include="Security\cp.sql" />
+    <Build Include="Security\ext.sql" />
+    <Build Include="Security\fin.sql" />
+    <Build Include="Security\gtn.sql" />
+    <Build Include="Security\ipm.sql" />
+    <Build Include="Security\map.sql" />
+    <Build Include="Security\mno.sql" />
+    <Build Include="Security\morph.sql" />
+    <Build Include="Security\ms.sql" />
+    <Build Include="Security\optimus.sql" />
+    <Build Include="Security\rpt.sql" />
+    <Build Include="Security\rt.sql" />
+    <Build Include="Security\sap.sql" />
+    <Build Include="Security\sms.sql" />
+    <Build Include="Security\smsapi.sql" />
+    <Build Include="Security\WhatsAppConfig_Key.sql" />
+    <Build Include="Security\WebhookTokenCfg_Key.sql" />
+    <Build Include="Security\ChatAppsConfig_Key.sql" />
+    <Build Include="Security\AccountCertificate_Key.sql" />
+    <Build Include="Security\GoogleVSMS_Key.sql" />
+    <Build Include="sms\Sequences\StatSmsLogSIDDailySeq.sql" />
+  </ItemGroup>
+</Project>
