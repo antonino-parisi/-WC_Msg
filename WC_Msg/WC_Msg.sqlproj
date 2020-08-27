@@ -1573,5 +1573,6 @@
     <Build Include="Security\AccountCertificate_Key.sql" />
     <Build Include="Security\GoogleVSMS_Key.sql" />
     <Build Include="sms\Sequences\StatSmsLogSIDDailySeq.sql" />
+    <Build Include="dbo\Tables\Table1.sql" />
   </ItemGroup>
 </Project>

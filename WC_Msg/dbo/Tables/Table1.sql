@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[SCV]
+(
+	[Id] INT NOT NULL PRIMARY KEY
+)
